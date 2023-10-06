@@ -6,7 +6,7 @@ class Translate:
 
     @staticmethod
     def translate_google(text_, language, from_language="auto"):
-        return GoogleTranslator(source=from_language, target=language).translate(text_)
+        return GoogleTranslator(source=from_language, target=language).translate_batch(text_)
 
     @staticmethod
     def translate_gpt(text_, language, from_language="spanish"):

@@ -16,14 +16,35 @@ class Elastic:
                                       ".crt",
                              basic_auth=("elastic", self.pw))
 
-    def get_recipe_es(self, size_recipe):
-        resp = self.client.search(index="recipes-es", size=size_recipe)
+    def get_recipe(self, size_recipe, category="es"):
+        if category == "en":
+            resp = self.client.search(index="recipes-es", size=size_recipe)
+        else:
+            resp = self.client.search(index="recipes-en", size=size_recipe)
         return Recipe.get_recipes(resp)
 
-    def get_recipe_en(self, size_recipe):
-        resp = self.client.search(index="recipes-en", size=size_recipe)
+    def get_recipe_batch(self, size_recipe, logs, category="es"):
+        consult = {
+            "query": {
+                "bool": {
+                    "must_not": [
+                        {"terms": {"idImage": logs}}
+                    ]
+                }
+            },
+            "size": size_recipe
+        }
+        if category == "es":
+            resp = self.client.search(index="recipes-es", body=consult)
+        else:
+            resp = self.client.search(index="recipes-en", body=consult)
         return Recipe.get_recipes(resp)
 
-    def get_logs(self, logs):
-        result = self.connect().index(index="logs-consult", document=logs)
-        print(result['result'])
+    def insert_logs(self, logs, _index):
+        result = self.connect().index(index=_index, document=logs)
+        if result['result'] != 'created':
+            print("Insercion de registro fallada")
+
+    def get_consult_logs(self, _index):
+        resp = self.client.search(index=_index, size=5000)
+        return resp

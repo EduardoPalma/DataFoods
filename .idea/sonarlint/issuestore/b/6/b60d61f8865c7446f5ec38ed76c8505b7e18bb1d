@@ -1,0 +1,14 @@
+
+Dpython:S5806•"+Rename this variable; it shadows a builtin.(‚§áÅ
+wpython:S1186İ"YAdd a nested comment explaining why this method is empty, or complete the implementation.(í„€“øÿÿÿÿ
+wpython:S1186ë"YAdd a nested comment explaining why this method is empty, or complete the implementation.(í„€“øÿÿÿÿ
+wpython:S1186ú"YAdd a nested comment explaining why this method is empty, or complete the implementation.(í„€“øÿÿÿÿ
+wpython:S1186ˆ"YAdd a nested comment explaining why this method is empty, or complete the implementation.(í„€“øÿÿÿÿ
+rpython:S1186®"YAdd a nested comment explaining why this method is empty, or complete the implementation.(èÄ—Å
+rpython:S1186¼"YAdd a nested comment explaining why this method is empty, or complete the implementation.(èÄ—Å
+rpython:S1186Ë"YAdd a nested comment explaining why this method is empty, or complete the implementation.(èÄ—Å
+rpython:S1186Ù"YAdd a nested comment explaining why this method is empty, or complete the implementation.(èÄ—Å
+Mpython:S1135Å"4Complete the task associated to this "TODO" comment.(¶Ã…¬
+Lpython:S1172Ó".Remove the unused function parameter "method".(ÛÁô·øÿÿÿÿ
+Rpython:S1135"4Complete the task associated to this "TODO" comment.(ïå½€ıÿÿÿÿ
+Ipython:S3862Î"0Replace this expression with an iterable object.(»”û°
