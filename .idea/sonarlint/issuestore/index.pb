@@ -25,3 +25,9 @@ N
 analysis/ingredient_id_new.csv,3\d\3dbe820fb69dbf69f00fe5e651f009f268a26c62
 G
 analysis/sinonimous.csv,d\3\d35c21be345df21f3e8ba62cc4325f076bd6cef5
+\
+,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
+^
+..idea/inspectionProfiles/profiles_settings.xml,1\e\1e9075f5bf079c01ef2c910709e91a497d262080
+?
+logs/Records.py,2\f\2ff695df8548c325ab29628deaf61fe760b45ea6

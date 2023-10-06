@@ -1,7 +1,6 @@
 def get_logs(resp):
     logs_id = []
     for hit in resp['hits']['hits']:
-        print(hit)
         logs_id.append(hit['_source']['id'])
     return logs_id
 
