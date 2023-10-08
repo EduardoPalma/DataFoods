@@ -1,14 +1,22 @@
-from consultation.RecipeQueries import RecipeQueries
+from consultation.QueriesRecipeIngredient import QueriesRecipeIngredient
 
 
 def init_pipeline(size_recipes, index="es"):
-    recipes_queries = RecipeQueries()
+    queries = QueriesRecipeIngredient()
+    result = queries.queries_ingredient_nutrifoods()
+    print(len(result))
+    for ingredient in result:
+        print(ingredient.id, " ", ingredient.name)
+        for measure in ingredient.measures:
+            print("    ", measure.id, " ", measure.name, " ", measure.grams)
+
     if index == "en":
-        recipes = recipes_queries.recipes_english(size_recipes)
+        recipes = queries.recipes_english(size_recipes)
     else:
-        recipes = recipes_queries.recipes_spanish(size_recipes)
-    for recipe in recipes:
-        print(recipe.name_recipe)
+        recipes = queries.recipes_spanish(size_recipes)
+
+    print(recipes)
+
 
 
 if __name__ == '__main__':

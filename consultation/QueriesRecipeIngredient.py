@@ -1,14 +1,15 @@
 from consultation.ElasticSearch import Elastic
+from consultation.NutrifoodsDB import NutrifoodDB
 from consultation.Translate import Translate
 import datetime
-
 from logs import Records
 from logs.Records import Logs
 
 
-class RecipeQueries:
+class QueriesRecipeIngredient:
     def __init__(self):
         self.client = Elastic("localhost", "9200", "GSc_a89P7pd*6*m6Q0oF")
+        self.client_nutrifoods = NutrifoodDB('nutrifoods_db', 'nutrifoods_dev', 'MVmYneLqe91$', 'localhost', '5432')
 
     def recipes_spanish(self, size_recipes):
         recipes = self.client.get_recipe_batch(size_recipes, self.consult_logs(), "es")
@@ -30,3 +31,7 @@ class RecipeQueries:
     def consult_logs(self):
         logs = self.client.get_consult_logs("logs-consult")
         return Records.get_logs(logs)
+
+    def queries_ingredient_nutrifoods(self):
+        ingredients = self.client_nutrifoods.get_ingredient_measure()
+        return ingredients

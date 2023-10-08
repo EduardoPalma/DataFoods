@@ -1,6 +1,6 @@
 from elasticsearch import Elasticsearch
 
-from recipe.json.Recipe import Recipe
+from recipe.entities.Recipe import Recipe
 
 
 class Elastic:
