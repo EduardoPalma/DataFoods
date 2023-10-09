@@ -20,6 +20,7 @@ class Recipe:
         self.ingredients = convert_ingredient(resp['ingredients'])
         self.steps = resp['steps']
         self.ingredients_translate = []
+        self.ingredient_parser = None
 
     def print_ingredient(self):
         for ingredient in self.ingredients:
