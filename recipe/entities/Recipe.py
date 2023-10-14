@@ -1,3 +1,6 @@
+from recipe.entities.IngredientNutri import IngredientIntegration
+
+
 def convert_ingredient(resp):
     ingredients = []
     for ingredients_text in resp:
@@ -20,7 +23,7 @@ class Recipe:
         self.ingredients = convert_ingredient(resp['ingredients'])
         self.steps = resp['steps']
         self.ingredients_translate = []
-        self.ingredient_parser = None
+        self.ingredient_parser: list[IngredientIntegration] = []
 
     def print_ingredient(self):
         for ingredient in self.ingredients:

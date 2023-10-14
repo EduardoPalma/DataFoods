@@ -77,8 +77,6 @@ L
 consultation/NutrifoodsDB.py,0\e\0ec672bb1b0ec64bc89f82d1e893392f3de9ae1c
 w
 G.idea/sonarlint/issuestore/e/8/e8300c5537052da950a285b2088d73b297671b92,8\4\84dcd9fa7e39578b94d579cfb595f2848f47f6b2
-O
-integration/Transformaciones.py,8\a\8a749a2f6ee3b33e7d8989e76b82ddb3a1afc33c
 w
 G.idea/sonarlint/issuestore/6/e/6e9644ddf83ab52f39902ecdbfdf4118285ac40c,4\2\4291a6ab95c696f29dcedea66516b99a0fd0f28a
 Å
@@ -87,3 +85,9 @@ w
 G.idea/sonarlint/issuestore/2/5/2511a7590eb091d560dac1615e6bcef0ceeaffb6,1\8\18214068b58c1008534ca39a211bf932cd4ed0b3
 w
 G.idea/sonarlint/issuestore/2/b/2b8cdd31beed7f49883db0988fe57e4618cd62fd,8\f\8f93193ce6ea315d87357af83d0ddeeb414e4b40
+J
+integration/Integration.py,a\2\a2fa1c88979ebe67de763a6cbe4baaffe948fd36
+G
+recipe/dto/RecipeDto.py,6\4\64b4ad907d1217e3392e86bd6a9bf0da63d649e4
+N
+integration/Transformations.py,e\1\e1b304b1e53ea2441a8f74e7f48240850b5090a5

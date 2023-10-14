@@ -9,6 +9,10 @@ class Translate:
         return GoogleTranslator(source=from_language, target=language).translate_batch(text_)
 
     @staticmethod
+    def translate_google_single(text_, language, from_language="auto"):
+        return GoogleTranslator(source=from_language, target=language).translate(text_)
+
+    @staticmethod
     def translate_gpt(text_, language, from_language="spanish"):
         return ChatGptTranslator(api_key="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", source=from_language,
                                  target=language).translate(text=text_)

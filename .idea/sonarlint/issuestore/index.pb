@@ -81,9 +81,13 @@ w
 G.idea/sonarlint/issuestore/2/b/2b8cdd31beed7f49883db0988fe57e4618cd62fd,8\f\8f93193ce6ea315d87357af83d0ddeeb414e4b40
 L
 consultation/NutrifoodsDB.py,0\e\0ec672bb1b0ec64bc89f82d1e893392f3de9ae1c
-O
-integration/Transformaciones.py,8\a\8a749a2f6ee3b33e7d8989e76b82ddb3a1afc33c
 M
 recipe/entities/Ingredient.py,6\4\64eb4e1308638e4fc839630fadb75b22848fde0d
 W
 'consultation/QueriesRecipeIngredient.py,f\9\f9fe0b64cf680bdb9bf33aade28eb987a608abb5
+J
+integration/Integration.py,a\2\a2fa1c88979ebe67de763a6cbe4baaffe948fd36
+G
+recipe/dto/RecipeDto.py,6\4\64b4ad907d1217e3392e86bd6a9bf0da63d649e4
+N
+integration/Transformations.py,e\1\e1b304b1e53ea2441a8f74e7f48240850b5090a5

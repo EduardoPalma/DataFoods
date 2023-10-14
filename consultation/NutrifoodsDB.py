@@ -1,10 +1,10 @@
 import psycopg2
 
-from recipe.entities.Ingredient import Ingredient, Measure
+from recipe.entities.IngredientNutri import IngredientNutri, Measure
 
 
-def convert_object_ingredient(result) -> list[Ingredient]:
-    ingredients: list[Ingredient] = []
+def convert_object_ingredient(result) -> list[IngredientNutri]:
+    ingredients: list[IngredientNutri] = []
     for row in result:
         id_ingredient: str = row[0]
         name = row[1]
@@ -22,7 +22,7 @@ def convert_object_ingredient(result) -> list[Ingredient]:
             measures: list[Measure] = []
             measure = Measure(id_measure_ingredient, name_measure, grams)
             measures.append(measure)
-            ingredient = Ingredient(id_ingredient, name, measures)
+            ingredient = IngredientNutri(id_ingredient, name, measures)
             ingredients.append(ingredient)
     return ingredients
 
