@@ -35,3 +35,7 @@ class QueriesRecipeIngredient:
     def queries_ingredient_nutrifoods(self):
         ingredients = self.client_nutrifoods.get_ingredient_measure()
         return ingredients
+
+    def queries_ingredient_synonym(self):
+        ingredient_synonym = self.client_nutrifoods.get_ingredient_synonyms()
+        return ingredient_synonym

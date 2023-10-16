@@ -1,6 +1,17 @@
 import psycopg2
 
-from recipe.entities.IngredientNutri import IngredientNutri, Measure
+from recipe.entities.IngredientNutri import IngredientNutri, Measure, IngredientSynonym
+
+
+def convert_object_ingredient_sy(result) -> list[IngredientSynonym]:
+    ingredients_values = {}
+    for id, name, synonym in result:
+        if id not in ingredients_values:
+            ingredients_values[id] = IngredientSynonym(id, name)
+        ingredients_values[id].synonym.append(synonym)
+
+    ingredients = list(ingredients_values.values())
+    return ingredients
 
 
 def convert_object_ingredient(result) -> list[IngredientNutri]:
@@ -56,3 +67,11 @@ class NutrifoodDB:
             "where i.id = im.ingredient_id;")
         result = cl.fetchall()
         return convert_object_ingredient(result)
+
+    def get_ingredient_synonyms(self):
+        cl = self.client.cursor()
+        cl.execute(
+            "select i.id,i.name,isy.name from ingredient as i, ingredient_synonym as isy"
+            " where i.id = isy.ingredient_id;")
+        result = cl.fetchall()
+        return convert_object_ingredient_sy(result)

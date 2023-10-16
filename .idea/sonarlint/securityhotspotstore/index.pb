@@ -69,8 +69,6 @@ D
 analysis/consult.sql,f\b\fb5dacc5f787d315cb256e91b235ba7d92fdf236
 Å
 Q.idea/sonarlint/securityhotspotstore/b/0/b0bb0a26d88d16d2e82502fe47e034e248a527a2,a\b\abff979ab89f5a1c300ea665b38e61345dcf9043
-M
-recipe/entities/Ingredient.py,6\4\64eb4e1308638e4fc839630fadb75b22848fde0d
 w
 G.idea/sonarlint/issuestore/5/7/5745c8937255f8d0820c1f7149b3be4fbd512a57,7\6\769474c4f3538e83147870802f19fb85183ef6b8
 L
@@ -91,3 +89,5 @@ G
 recipe/dto/RecipeDto.py,6\4\64b4ad907d1217e3392e86bd6a9bf0da63d649e4
 N
 integration/Transformations.py,e\1\e1b304b1e53ea2441a8f74e7f48240850b5090a5
+R
+"recipe/entities/IngredientNutri.py,7\0\70ec18a648df5bed1ef8ba0d2b9fe218844ff34a

@@ -17,3 +17,10 @@ class IngredientIntegration:
         self.name = ingredient_name
         self.unit = unit
         self.quantity = quantity
+
+
+class IngredientSynonym:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+        self.synonym = []
