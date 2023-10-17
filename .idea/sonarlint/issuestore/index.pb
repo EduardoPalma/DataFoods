@@ -83,11 +83,17 @@ L
 consultation/NutrifoodsDB.py,0\e\0ec672bb1b0ec64bc89f82d1e893392f3de9ae1c
 W
 'consultation/QueriesRecipeIngredient.py,f\9\f9fe0b64cf680bdb9bf33aade28eb987a608abb5
-J
-integration/Integration.py,a\2\a2fa1c88979ebe67de763a6cbe4baaffe948fd36
 G
 recipe/dto/RecipeDto.py,6\4\64b4ad907d1217e3392e86bd6a9bf0da63d649e4
 N
 integration/Transformations.py,e\1\e1b304b1e53ea2441a8f74e7f48240850b5090a5
 R
 "recipe/entities/IngredientNutri.py,7\0\70ec18a648df5bed1ef8ba0d2b9fe218844ff34a
+X
+(integration/AssociationWithNutrifoods.py,a\8\a873e95a2bdfee982a0c8804e1ac8b278825f81f
+T
+$integration/AcquisitionIngredient.py,7\9\793922b40556743f2cfb58c2f56cee8208359ce1
+G
+integration/Cleaning.py,a\7\a7bf321846b7c8d18d0dadaf5e52c6cc71cd0221
+L
+integration/Normalization.py,9\6\969eda0fd363ad062e62cc8a3c9b2d1852718cd5

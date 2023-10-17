@@ -17,4 +17,4 @@ def init_pipeline(size_recipes, language="es"):
 
 if __name__ == '__main__':
     # 523 para abarcar el total de recetas en 1 semana
-    init_pipeline(10, "en")
+    init_pipeline(10, "es")

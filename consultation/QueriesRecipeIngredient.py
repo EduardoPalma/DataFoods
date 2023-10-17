@@ -1,3 +1,4 @@
+import time
 from consultation.ElasticSearch import Elastic
 from consultation.NutrifoodsDB import NutrifoodDB
 from consultation.Translate import Translate
@@ -19,6 +20,7 @@ class QueriesRecipeIngredient:
                 log = Logs(recipe.id_image, 'consult', datetime.datetime.now())
                 self.client.insert_logs(log.tojson(), "logs-consult")
                 print("Receta traducida :" + recipe.id_image)
+                time.sleep(0.5)
             except:
                 print("Error Traduccion 'GoogleTranslate'")
                 raise

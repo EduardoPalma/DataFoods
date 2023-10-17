@@ -1,3 +1,5 @@
+import time
+
 from consultation.Translate import Translate
 from recipe.entities.IngredientNutri import IngredientIntegration, IngredientSynonym
 from recipe.entities.Recipe import Recipe
@@ -42,12 +44,14 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
             trans_en = ingredient_parser.name
             trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
             ingredient_parser.name = trans_es
+            time.sleep(0.2)
         else:
             trans_en = ingredient_parser.name + "|" + ingredient_parser.unit
             trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
             split = trans_es.split("|")
             ingredient_parser.name = split[0]
             ingredient_parser.unit = split[1]
+            time.sleep(0.2)
 
     def normalization_quantity(ingredient_parser: IngredientIntegration):
         if ingredient_parser.quantity is not None:
@@ -58,7 +62,12 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
                 elif fraction.numerator == 333:
                     ingredient_parser.quantity = "1/3"
                 else:
-                    ingredient_parser.quantity = str(fraction.numerator) + "/" + str(fraction.denominator)
+                    if int(ingredient_parser.quantity.split(".")[0]) >= 1:
+                        a = fraction.numerator // fraction.denominator
+                        b = fraction.numerator % fraction.denominator
+                        ingredient_parser.quantity = str(a) + " " + str(b) + "/" + str(fraction.denominator)
+                    else:
+                        ingredient_parser.quantity = str(fraction.numerator) + "/" + str(fraction.denominator)
 
     def normalization_difficulty(recipe_: Recipe):
         for key, value in dictionary_dificulty.items():
@@ -68,7 +77,7 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
     def normalization_ingredient_name(ingredient_parser: IngredientIntegration):
         for ingredient_syno in ingredient_synonym:
             if ingredient_parser.name in ingredient_syno.synonym:
-                print("okey", ingredient_parser.name)
+                ingredient_parser.name = ingredient_syno.name
 
     for recipe in recipes:
         for ingredient_par in recipe.ingredient_parser:

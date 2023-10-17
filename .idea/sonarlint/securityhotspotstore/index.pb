@@ -83,11 +83,17 @@ w
 G.idea/sonarlint/issuestore/2/5/2511a7590eb091d560dac1615e6bcef0ceeaffb6,1\8\18214068b58c1008534ca39a211bf932cd4ed0b3
 w
 G.idea/sonarlint/issuestore/2/b/2b8cdd31beed7f49883db0988fe57e4618cd62fd,8\f\8f93193ce6ea315d87357af83d0ddeeb414e4b40
-J
-integration/Integration.py,a\2\a2fa1c88979ebe67de763a6cbe4baaffe948fd36
 G
 recipe/dto/RecipeDto.py,6\4\64b4ad907d1217e3392e86bd6a9bf0da63d649e4
 N
 integration/Transformations.py,e\1\e1b304b1e53ea2441a8f74e7f48240850b5090a5
 R
 "recipe/entities/IngredientNutri.py,7\0\70ec18a648df5bed1ef8ba0d2b9fe218844ff34a
+X
+(integration/AssociationWithNutrifoods.py,a\8\a873e95a2bdfee982a0c8804e1ac8b278825f81f
+T
+$integration/AcquisitionIngredient.py,7\9\793922b40556743f2cfb58c2f56cee8208359ce1
+G
+integration/Cleaning.py,a\7\a7bf321846b7c8d18d0dadaf5e52c6cc71cd0221
+L
+integration/Normalization.py,9\6\969eda0fd363ad062e62cc8a3c9b2d1852718cd5
