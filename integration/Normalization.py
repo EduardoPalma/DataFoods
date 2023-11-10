@@ -1,5 +1,6 @@
 import time
-
+import sys
+from unidecode import unidecode
 from consultation.Translate import Translate
 from recipe.entities.IngredientNutri import IngredientIntegration, IngredientSynonym
 from recipe.entities.Recipe import Recipe
@@ -49,8 +50,11 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
             trans_en = ingredient_parser.name + "|" + ingredient_parser.unit
             trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
             split = trans_es.split("|")
-            ingredient_parser.name = split[0]
-            ingredient_parser.unit = split[1]
+            if len(split) > 1:
+                ingredient_parser.name = split[0]
+                ingredient_parser.unit = split[1]
+            else:
+                ingredient_parser.name = split[0]
             time.sleep(0.2)
 
     def normalization_quantity(ingredient_parser: IngredientIntegration):
@@ -76,10 +80,12 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def normalization_ingredient_name(ingredient_parser: IngredientIntegration):
         for ingredient_syno in ingredient_synonym:
-            if ingredient_parser.name in ingredient_syno.synonym:
-                ingredient_parser.name = ingredient_syno.name
+            for synonym in ingredient_syno.synonym:
+                if ingredient_parser.name.lower().strip() == synonym.strip().lower():
+                    ingredient_parser.name = ingredient_syno.name
 
-    for recipe in recipes:
+    total = len(recipes)
+    for index, recipe in enumerate(recipes, start=1):
         for ingredient_par in recipe.ingredient_parser:
             normalization_unit(ingredient_par)
             normalization_quantity(ingredient_par)
@@ -90,3 +96,11 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
         recipe.category_recipe = [normalization_food_category(category_recipe) for category_recipe in
                                   recipe.category_recipe]
         normalization_difficulty(recipe)
+
+        time.sleep(0.1)
+        percentage = int((index / total) * 100)
+        sys.stdout.write(
+            "\rNormalizando Datos          : [%-40s] %d%%" % ('=' * (index * 40 // total),
+                                                          percentage))
+        sys.stdout.flush()
+    sys.stdout.write("\n")

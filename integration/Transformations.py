@@ -15,9 +15,10 @@ def pipeline(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri]
                             not any(ingredient.name in punished for ingredient in recipe.ingredient_parser)]
         return filtered_recipes
 
+    print("---------- Fase de Integracion ---------")
     acquisition_ing_unit_quantity(recipes, language)
-    recipes = cleaning(recipes)
-    normalization(recipes, ingredient_synonym)
-    business_rules(recipes)
-    association_with_nutrifoods_ingredient(recipes, ingredient_nutrifoods)
-    return recipes
+    recipes_ = cleaning(recipes)
+    normalization(recipes_, ingredient_synonym)
+    business_rules(recipes_)
+    association_with_nutrifoods_ingredient(recipes_, ingredient_nutrifoods)
+    return recipes_

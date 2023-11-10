@@ -11,10 +11,9 @@ def init_pipeline(size_recipes, language="es"):
     else:
         recipes = queries.recipes_spanish(size_recipes)
 
-    Transformations.pipeline(recipes, ingredient_nutrifoods, ingredient_synonym, language)
-    print(len(recipes))
+    recipes_ = Transformations.pipeline(recipes, ingredient_nutrifoods, ingredient_synonym, language)
+    print(len(recipes_))
 
 
 if __name__ == '__main__':
-    # 523 para abarcar el total de recetas en 1 semana
-    init_pipeline(10, "es")
+    init_pipeline(500, "es")

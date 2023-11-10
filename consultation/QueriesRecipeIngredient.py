@@ -5,6 +5,7 @@ from consultation.Translate import Translate
 import datetime
 from logs import Records
 from logs.Records import Logs
+import sys
 
 
 class QueriesRecipeIngredient:
@@ -14,16 +15,22 @@ class QueriesRecipeIngredient:
 
     def recipes_spanish(self, size_recipes):
         recipes = self.client.get_recipe_batch(size_recipes, self.consult_logs(), "es")
-        for recipe in recipes:
+        total = len(recipes)
+        for index, recipe in enumerate(recipes, start=1):
             try:
                 recipe.ingredients_translate = Translate.translate_google(recipe.ingredients, 'en')
                 log = Logs(recipe.id_image, 'consult', datetime.datetime.now())
                 self.client.insert_logs(log.tojson(), "logs-consult")
-                print("Receta traducida :" + recipe.id_image)
                 time.sleep(0.5)
+                porcentage = int((index / total) * 100)
+                sys.stdout.write(
+                    "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), porcentage))
+                sys.stdout.flush()
             except:
                 print("Error Traduccion 'GoogleTranslate'")
                 raise
+
+        sys.stdout.write("\n")
         return recipes
 
     def recipes_english(self, size_recipes):

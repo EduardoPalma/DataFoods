@@ -1,4 +1,6 @@
 from recipe.entities.Recipe import Recipe
+import time
+import sys
 
 
 def cleaning(recipes: list[Recipe]):
@@ -26,9 +28,18 @@ def cleaning(recipes: list[Recipe]):
     # duplicados y faltantes
     recipes_uniq = set()
     recipes_aux: list[Recipe] = []
-    for recipe in recipes:
+    total = len(recipes)
+    for index, recipe in enumerate(recipes, start=1):
         if duplicate_attribute(recipe) not in recipes_uniq and missing_data(recipe):
             recipes_uniq.add(duplicate_attribute(recipe))
             recipes_aux.append(recipe)
+
+        time.sleep(0.1)
+        percentage = int((index / total) * 100)
+        sys.stdout.write(
+            "\rLimpieza de datos           : [%-40s] %d%%" % ('=' * (index * 40 // total),
+                                                          percentage))
+        sys.stdout.flush()
+    sys.stdout.write("\n")
 
     return recipes_aux
