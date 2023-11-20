@@ -97,3 +97,27 @@ G
 integration/Cleaning.py,a\7\a7bf321846b7c8d18d0dadaf5e52c6cc71cd0221
 L
 integration/Normalization.py,9\6\969eda0fd363ad062e62cc8a3c9b2d1852718cd5
+D
+analysis/revisar.csv,6\1\61043de885ed053ae4bcbcfe5b3541ce9299ca5a
+]
+-error_recipes/fails_ingredient_measure.csv_es,9\a\9adf054a894753fd78c379fe4506df17d2a39564
+U
+%error_recipes/fails_ingredient_es.csv,e\b\eb5a93c19569e4b590df07bec8203d65a4ccbbdd
+R
+"error_recipes/fails_ingredient.csv,b\4\b4473ee390c7845f71085080f88d8b0fbfea5e41
+Z
+*error_recipes/fails_ingredient_measure.csv,4\3\43236445f0837f1086814ffca4d9b40d0b58aecb
+P
+ analysis/fails_ingredient_es.csv,2\f\2fb10d7193d980ec4c3cc30dfb2dbc94a0455ac6
+X
+(analysis/fails_ingredient_measure.csv_es,6\8\6821ee9a75b6fbaf0636360948604e8ba27f2194
+E
+utils/ConvertUnits.py,a\5\a5b0dbf8342350525f58a03ee36dddc8824c16d4
+B
+utils/nlp_utils.py,1\1\11a9d40a3f8b435b77cbfb6d0f1c7e125c55c2d1
+B
+utils/jsonfiles.py,b\0\b0939168adecacdc4f90dba4ded6d510cc9bad1d
+A
+utils/Nlputils.py,0\5\05523a50fd868fcdb27ed59f16e432175e1d4bac
+A
+load/recetas.json,e\2\e2e8e963b477dcfee8b8f4f5afca75763967e1a6

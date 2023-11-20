@@ -1,5 +1,5 @@
 import psycopg2
-
+from unidecode import unidecode
 from recipe.entities.IngredientNutri import IngredientNutri, Measure, IngredientSynonym
 
 
@@ -8,7 +8,7 @@ def convert_object_ingredient_sy(result) -> list[IngredientSynonym]:
     for id, name, synonym in result:
         if id not in ingredients_values:
             ingredients_values[id] = IngredientSynonym(id, name)
-        ingredients_values[id].synonym.append(synonym)
+        ingredients_values[id].synonym.append(unidecode(synonym))
 
     ingredients = list(ingredients_values.values())
     return ingredients

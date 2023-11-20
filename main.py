@@ -16,4 +16,4 @@ def init_pipeline(size_recipes, language="es"):
 
 
 if __name__ == '__main__':
-    init_pipeline(500, "es")
+    init_pipeline(100, "es")

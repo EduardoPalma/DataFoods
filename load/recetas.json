@@ -1,0 +1,1657 @@
+[
+  {
+    "name": "Receta de bollitos de calabaza",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/receta-de-bollitos-de-calabaza/",
+    "portions": 20,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Desayuno",
+      "Almuerzo"
+    ],
+    "dishTypes": [
+      "Plato de entrada",
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 449,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 41,
+        "grams": 350.0
+      },
+      {
+        "id": 73,
+        "grams": 270.0
+      },
+      {
+        "id": 106,
+        "grams": 25.0
+      },
+      {
+        "id": 32,
+        "grams": 30.0
+      },
+      {
+        "id": 58,
+        "grams": 40.0
+      },
+      {
+        "id": 3,
+        "grams": 25.0
+      },
+      {
+        "id": 59,
+        "grams": 277.5
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Tortilla de champiñones",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/tortilla-de-champinones/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 49,
+        "integerPart": 5,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 29,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      }
+    ],
+    "quantities": [
+      {
+        "id": 31,
+        "grams": 200.0
+      },
+      {
+        "id": 376,
+        "grams": 150.0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Ensalada de patata",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/ensalada-de-patata/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Ensalada"
+    ],
+    "measures": [
+      {
+        "measureId": 405,
+        "integerPart": 3,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 301,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 498,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 913,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 49,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 579,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 442,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 94,
+        "grams": 40.0
+      },
+      {
+        "id": 35,
+        "grams": 70.0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Carpaccio de calabacín",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/carpaccio-de-calabacin/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 254,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 673,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 80,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 270,
+        "grams": 40.0
+      },
+      {
+        "id": 122,
+        "grams": 40.0
+      },
+      {
+        "id": 429,
+        "grams": 150.0
+      },
+      {
+        "id": 9,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Anchoas asadas al limón",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/anchoas-asadas-al-limon/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 93,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 166,
+        "integerPart": 10,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 39,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 604,
+        "integerPart": 5,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 117,
+        "grams": 500.0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      },
+      {
+        "id": 3,
+        "grams": 46.25
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Coliflor en filetes al horno",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/coliflor-en-filetes-al-horno/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 832,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 2,
+        "grams": 0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Espárragos frescos con mayonesa de huevo duro",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/esparragos-frescos-mayonesa-huevo-duro/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 49,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 93,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 164,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 45,
+        "grams": 1000.0
+      },
+      {
+        "id": 3,
+        "grams": 25.0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Bizcocho de cumpleaños para bebe",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/bizcocho-de-cumpleanos-para-bebe/",
+    "portions": 8,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 49,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 527,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 529,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 41,
+        "grams": 200.0
+      },
+      {
+        "id": 59,
+        "grams": 425.5
+      },
+      {
+        "id": 3,
+        "grams": 138.75
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Bizcocho",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/bizcocho/",
+    "portions": 9,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Desayuno",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 49,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 902,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 41,
+        "grams": 150.0
+      },
+      {
+        "id": 32,
+        "grams": 150.0
+      },
+      {
+        "id": 12,
+        "grams": 50.0
+      },
+      {
+        "id": 106,
+        "grams": 10.0
+      },
+      {
+        "id": 9,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Falso risotto de setas",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/falso-risotto-setas/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 39,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 29,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 66,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 927,
+        "integerPart": 0,
+        "numerator": 3,
+        "denominator": 4
+      }
+    ],
+    "quantities": [
+      {
+        "id": 104,
+        "grams": 200.0
+      },
+      {
+        "id": 31,
+        "grams": 200.0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Árbol de navidad de frutas",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/arbol-navidad-frutas/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [],
+    "quantities": [
+      {
+        "id": 151,
+        "grams": 0
+      },
+      {
+        "id": 221,
+        "grams": 0
+      },
+      {
+        "id": 460,
+        "grams": 0
+      },
+      {
+        "id": 52,
+        "grams": 0
+      },
+      {
+        "id": 102,
+        "grams": 0
+      },
+      {
+        "id": 152,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Alcachofas con almejas y patatas",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/alcachofas-almejas-patatas/",
+    "portions": 2,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 665,
+        "integerPart": 5,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 403,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 29,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 39,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 164,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 279,
+        "grams": 500.0
+      },
+      {
+        "id": 87,
+        "grams": 462.5
+      },
+      {
+        "id": 3,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Tostada de pera con queso",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/tostada-pera-queso/",
+    "portions": 2,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 1259,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 1282,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 35,
+        "grams": 50.0
+      },
+      {
+        "id": 94,
+        "grams": 100.0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Mini pancakes de avena y plátano",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/mini-pancakes-avena-platano/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Postre",
+      "Plato de entrada"
+    ],
+    "measures": [
+      {
+        "measureId": 891,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 49,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 59,
+        "grams": 185.0
+      },
+      {
+        "id": 57,
+        "grams": 0
+      },
+      {
+        "id": 41,
+        "grams": 120.0
+      },
+      {
+        "id": 8,
+        "grams": 20.0
+      },
+      {
+        "id": 116,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Lasaña de acelgas y queso",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/lasana-acelga-queso/",
+    "portions": 6,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 67,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 108,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 29,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 391,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 271,
+        "integerPart": 8,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 540,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 156,
+        "grams": 200.0
+      },
+      {
+        "id": 24,
+        "grams": 100.0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      },
+      {
+        "id": 2,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Garbanzos con espinacas",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/garbanzos-con-espinacas/",
+    "portions": 2,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 262,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 439,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 312,
+        "integerPart": 8,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 39,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 3,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Albóndigas de pollo al curry",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/albondigas-de-pollo-al-curry-al-vapor/",
+    "portions": 6,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 49,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 39,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 29,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 4
+      },
+      {
+        "measureId": 545,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 29,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 108,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 545,
+        "integerPart": 3,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 316,
+        "grams": 500.0
+      },
+      {
+        "id": 116,
+        "grams": 100.0
+      },
+      {
+        "id": 17,
+        "grams": 0
+      },
+      {
+        "id": 2,
+        "grams": 0
+      },
+      {
+        "id": 59,
+        "grams": 92.5
+      },
+      {
+        "id": 1,
+        "grams": 0
+      },
+      {
+        "id": 87,
+        "grams": 138.75
+      },
+      {
+        "id": 59,
+        "grams": 277.5
+      },
+      {
+        "id": 182,
+        "grams": 185.0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Arroz con leche",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/arroz-con-leche/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 459,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 531,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 697,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      }
+    ],
+    "quantities": [
+      {
+        "id": 104,
+        "grams": 200.0
+      },
+      {
+        "id": 9,
+        "grams": 0
+      },
+      {
+        "id": 72,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      },
+      {
+        "id": 32,
+        "grams": 70.0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Bolitas de zanahoria y coco",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/bolitas-de-zanahoria-y-coco/",
+    "portions": 12,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena",
+      "Desayuno"
+    ],
+    "dishTypes": [
+      "Plato de entrada",
+      "Postre"
+    ],
+    "measures": [],
+    "quantities": [
+      {
+        "id": 10,
+        "grams": 200.0
+      },
+      {
+        "id": 8,
+        "grams": 20.0
+      },
+      {
+        "id": 78,
+        "grams": 40.0
+      },
+      {
+        "id": 293,
+        "grams": 30.0
+      },
+      {
+        "id": 98,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Mona de Pascua",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/mona-de-pascua/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 449,
+        "integerPart": 0,
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "measureId": 49,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 1126,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 49,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 3,
+        "grams": 70.0
+      },
+      {
+        "id": 59,
+        "grams": 185.0
+      },
+      {
+        "id": 102,
+        "grams": 0
+      },
+      {
+        "id": 32,
+        "grams": 50.0
+      },
+      {
+        "id": 106,
+        "grams": 25.0
+      },
+      {
+        "id": 41,
+        "grams": 250.0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Arroz verde con verduras",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/arroz-verde-con-verduras/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 39,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 108,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 254,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 104,
+        "grams": 150.0
+      },
+      {
+        "id": 30,
+        "grams": 225.0
+      },
+      {
+        "id": 203,
+        "grams": 0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Mousse de yogur con compota de fresa y cerezas",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/mousse-de-yogur-con-compota-de-fresa-y-cerezas/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo"
+    ],
+    "dishTypes": [
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 1050,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 1064,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 119,
+        "grams": 100.0
+      },
+      {
+        "id": 292,
+        "grams": 100.0
+      },
+      {
+        "id": 32,
+        "grams": 10.0
+      },
+      {
+        "id": 9,
+        "grams": 0
+      },
+      {
+        "id": 32,
+        "grams": 15.0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Patatas Hasselback",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/patatas-hasselback/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 405,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 397,
+        "grams": 150.0
+      },
+      {
+        "id": 35,
+        "grams": 100.0
+      },
+      {
+        "id": 203,
+        "grams": 0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Espirales de calabacín",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/espirales-de-calabacin/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 254,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 40,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 3,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      },
+      {
+        "id": 203,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Champiñones rellenos de pera y queso",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/champinones-rellenos-de-pera-y-queso/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 271,
+        "integerPart": 15,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 1259,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 4,
+        "grams": 0
+      },
+      {
+        "id": 35,
+        "grams": 100.0
+      },
+      {
+        "id": 94,
+        "grams": 60.0
+      },
+      {
+        "id": 12,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Brócoli salteado con pollo",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/brocoli-salteado-con-pollo/",
+    "portions": 20,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 351,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 31,
+        "grams": 200.0
+      },
+      {
+        "id": 316,
+        "grams": 300.0
+      },
+      {
+        "id": 160,
+        "grams": 0
+      },
+      {
+        "id": 55,
+        "grams": 150.0
+      },
+      {
+        "id": 47,
+        "grams": 0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Crema de calabaza con especias",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/crema-de-calabaza-con-especias/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato de entrada"
+    ],
+    "measures": [],
+    "quantities": [
+      {
+        "id": 73,
+        "grams": 600.0
+      },
+      {
+        "id": 59,
+        "grams": 370.0
+      },
+      {
+        "id": 18,
+        "grams": 0
+      },
+      {
+        "id": 24,
+        "grams": 25.0
+      },
+      {
+        "id": 69,
+        "grams": 0
+      },
+      {
+        "id": 3,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Galletas saludables de plátano",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/galletas-saludables-de-platano/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Desayuno",
+      "Almuerzo"
+    ],
+    "dishTypes": [
+      "Plato de entrada",
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 891,
+        "integerPart": 3,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 293,
+        "grams": 100.0
+      },
+      {
+        "id": 94,
+        "grams": 100.0
+      },
+      {
+        "id": 8,
+        "grams": 30.0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Champiñones con queso Brie",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/champinones-con-queso-brie/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [],
+    "quantities": [
+      {
+        "id": 31,
+        "grams": 500.0
+      },
+      {
+        "id": 35,
+        "grams": 120.0
+      },
+      {
+        "id": 161,
+        "grams": 185.0
+      },
+      {
+        "id": 3,
+        "grams": 55.5
+      },
+      {
+        "id": 17,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Helado de plátano y queso fresco",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/helado-de-platano-y-queso-fresco/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo"
+    ],
+    "dishTypes": [
+      "Postre"
+    ],
+    "measures": [
+      {
+        "measureId": 891,
+        "integerPart": 3,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 241,
+        "integerPart": 1,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 72,
+        "grams": 0
+      },
+      {
+        "id": 111,
+        "grams": 0
+      },
+      {
+        "id": 94,
+        "grams": 50.0
+      },
+      {
+        "id": 415,
+        "grams": 113.398
+      }
+    ],
+    "steps": []
+  },
+  {
+    "name": "Merluza con crema de coliflor al ras al hanout",
+    "author": "nutrium",
+    "url": "https://www.nutriumpfg.com/merluza-con-crema-de-coliflor-al-ras-al-hanout/",
+    "portions": 4,
+    "preparationTime": 0,
+    "difficulty": "Facil",
+    "mealTypes": [
+      "Almuerzo",
+      "Cena"
+    ],
+    "dishTypes": [
+      "Plato principal"
+    ],
+    "measures": [
+      {
+        "measureId": 1550,
+        "integerPart": 4,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 40,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      },
+      {
+        "measureId": 13,
+        "integerPart": 2,
+        "numerator": 0,
+        "denominator": 0
+      }
+    ],
+    "quantities": [
+      {
+        "id": 138,
+        "grams": 0
+      },
+      {
+        "id": 273,
+        "grams": 0
+      },
+      {
+        "id": 59,
+        "grams": 277.5
+      },
+      {
+        "id": 8,
+        "grams": 30.0
+      },
+      {
+        "id": 17,
+        "grams": 0
+      },
+      {
+        "id": 1,
+        "grams": 0
+      }
+    ],
+    "steps": []
+  }
+]

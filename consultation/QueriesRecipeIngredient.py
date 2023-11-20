@@ -22,9 +22,9 @@ class QueriesRecipeIngredient:
                 log = Logs(recipe.id_image, 'consult', datetime.datetime.now())
                 self.client.insert_logs(log.tojson(), "logs-consult")
                 time.sleep(0.5)
-                porcentage = int((index / total) * 100)
+                porcentage_ = int((index / total) * 100)
                 sys.stdout.write(
-                    "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), porcentage))
+                    "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), porcentage_))
                 sys.stdout.flush()
             except:
                 print("Error Traduccion 'GoogleTranslate'")

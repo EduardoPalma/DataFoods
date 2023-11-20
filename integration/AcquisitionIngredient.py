@@ -12,7 +12,6 @@ def acquisition_ing_unit_quantity(recipes: list[Recipe], language: str):
             if parser.name is not None:
                 ingredient = parser.name.text
             else:
-                # registro
                 ingredient = None
             if parser.amount is not None and len(parser.amount) > 0:
                 quantity = parser.amount[0].quantity
