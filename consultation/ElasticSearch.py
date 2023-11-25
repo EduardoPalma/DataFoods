@@ -48,3 +48,4 @@ class Elastic:
     def get_consult_logs(self, _index):
         resp = self.client.search(index=_index, size=5000)
         return resp
+

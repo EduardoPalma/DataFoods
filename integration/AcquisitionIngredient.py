@@ -1,4 +1,4 @@
-from recipe.entities.IngredientNutri import IngredientIntegration
+from recipe.entities.IngredientNutrifood import IngredientIntegration
 from recipe.entities.Recipe import Recipe
 from ingredient_parser import parse_ingredient
 import sys
@@ -29,7 +29,7 @@ def acquisition_ing_unit_quantity(recipes: list[Recipe], language: str):
         else:
             parse(recipe.ingredients)
 
-        time.sleep(0.1)
+        time.sleep(0.05)
         percentage = int((index / total) * 100)
         sys.stdout.write(
             "\rAdquiriendo Ingredientes    : [%-40s] %d%%" % ('=' * (index * 40 // total),

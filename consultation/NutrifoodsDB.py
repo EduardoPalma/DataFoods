@@ -1,6 +1,6 @@
 import psycopg2
 from unidecode import unidecode
-from recipe.entities.IngredientNutri import IngredientNutri, Measure, IngredientSynonym
+from recipe.entities.IngredientNutrifood import IngredientNutri, Measure, IngredientSynonym
 
 
 def convert_object_ingredient_sy(result) -> list[IngredientSynonym]:

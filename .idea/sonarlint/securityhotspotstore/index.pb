@@ -87,8 +87,6 @@ G
 recipe/dto/RecipeDto.py,6\4\64b4ad907d1217e3392e86bd6a9bf0da63d649e4
 N
 integration/Transformations.py,e\1\e1b304b1e53ea2441a8f74e7f48240850b5090a5
-R
-"recipe/entities/IngredientNutri.py,7\0\70ec18a648df5bed1ef8ba0d2b9fe218844ff34a
 X
 (integration/AssociationWithNutrifoods.py,a\8\a873e95a2bdfee982a0c8804e1ac8b278825f81f
 T
@@ -111,13 +109,15 @@ P
  analysis/fails_ingredient_es.csv,2\f\2fb10d7193d980ec4c3cc30dfb2dbc94a0455ac6
 X
 (analysis/fails_ingredient_measure.csv_es,6\8\6821ee9a75b6fbaf0636360948604e8ba27f2194
-E
-utils/ConvertUnits.py,a\5\a5b0dbf8342350525f58a03ee36dddc8824c16d4
-B
-utils/nlp_utils.py,1\1\11a9d40a3f8b435b77cbfb6d0f1c7e125c55c2d1
 B
 utils/jsonfiles.py,b\0\b0939168adecacdc4f90dba4ded6d510cc9bad1d
 A
 utils/Nlputils.py,0\5\05523a50fd868fcdb27ed59f16e432175e1d4bac
 A
 load/recetas.json,e\2\e2e8e963b477dcfee8b8f4f5afca75763967e1a6
+B
+utils/Utilsunit.py,8\2\8291c4972a1ca3f13ddb54cbce0d6e3cf3b6f20b
+V
+&recipe/entities/IngredientNutrifood.py,4\2\42ade1f3808a5149de9a40b9b8183af821b30612
+C
+logs/DataQuality.py,b\5\b5d7e3b5af731f996804d83fa8e6a1a11036e81f

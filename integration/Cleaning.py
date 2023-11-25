@@ -34,7 +34,7 @@ def cleaning(recipes: list[Recipe]):
             recipes_uniq.add(duplicate_attribute(recipe))
             recipes_aux.append(recipe)
 
-        time.sleep(0.1)
+        time.sleep(0.05)
         percentage = int((index / total) * 100)
         sys.stdout.write(
             "\rLimpieza de datos           : [%-40s] %d%%" % ('=' * (index * 40 // total),

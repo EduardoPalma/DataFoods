@@ -3,7 +3,7 @@ import sys
 import re
 from unidecode import unidecode
 from consultation.Translate import Translate
-from recipe.entities.IngredientNutri import IngredientIntegration, IngredientSynonym
+from recipe.entities.IngredientNutrifood import IngredientIntegration, IngredientSynonym
 from recipe.entities.Recipe import Recipe
 from fractions import Fraction
 
