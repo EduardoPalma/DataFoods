@@ -1,5 +1,5 @@
-from recipe.entities.IngredientNutrifood import IngredientIntegration
-from recipe.entities.Recipe import Recipe
+from recipe.entities.ingredient_nutrifood import IngredientIntegration
+from recipe.entities.recipe import Recipe
 from ingredient_parser import parse_ingredient
 import sys
 import time

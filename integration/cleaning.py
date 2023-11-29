@@ -1,4 +1,4 @@
-from recipe.entities.Recipe import Recipe
+from recipe.entities.recipe import Recipe
 import time
 import sys
 

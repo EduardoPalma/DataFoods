@@ -2,9 +2,9 @@ import time
 import sys
 import re
 from unidecode import unidecode
-from consultation.Translate import Translate
-from recipe.entities.IngredientNutrifood import IngredientIntegration, IngredientSynonym
-from recipe.entities.Recipe import Recipe
+from consultation.translate import Translate
+from recipe.entities.ingredient_nutrifood import IngredientIntegration, IngredientSynonym
+from recipe.entities.recipe import Recipe
 from fractions import Fraction
 
 dictionary_food_category = {
@@ -25,13 +25,13 @@ dictionary_food_category = {
 dictionary_meals_day = {"Desayuno": ["desayuno"], "Almuerzo": ["almuerzo"], "Cena": ["cena"],
                         "Merienda": ["Snack", "snack"]}
 
-dictionary_difficulty = {"Fácil": ["facil", "fácil"], "Medianada": ["media"], "Dificil": ["dificil"]}
+dictionary_difficulty = {"Fácil": ["facil", "fácil", "Facil"], "Medianada": ["media"], "Dificil": ["dificil"]}
 
 dictionary_unit = {"kg": ["kilogramo", "kilogramos"], "g": ["grs", "gramos", "gramo"], "oz": ["onza", "onzas"],
                    "lb": ["libra", "libras"]}
 
 
-def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSynonym]):
+def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSynonym], language: str):
     def normalization_word_with_s(word: str):
         words = word.split()
         words_without_s = [word_.rstrip('s') for word_ in words]
@@ -53,18 +53,14 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
         if ingredient_parser.unit is None or ingredient_parser.unit == '':
             trans_en = ingredient_parser.name.replace(".", "")
             trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
+            time.sleep(0.2)
             ingredient_parser.name = normalization_word_with_s(trans_es)
-            time.sleep(0.25)
         else:
-            trans_en = ingredient_parser.name.replace(".", "") + "|" + ingredient_parser.unit.replace(".", "")
-            trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
-            split = trans_es.split("|")
-            if len(split) > 1:
-                ingredient_parser.name = normalization_word_with_s(split[0].strip())
-                ingredient_parser.unit = normalization_word_with_s(split[1].strip())
-            else:
-                ingredient_parser.name = normalization_word_with_s(split[0].strip())
-            time.sleep(0.25)
+            trans_en = [ingredient_parser.name.replace(".", ""), ingredient_parser.unit.replace(".", "")]
+            trans_es = Translate.translate_google(trans_en, 'es', 'en')
+            time.sleep(0.2)
+            ingredient_parser.name = normalization_word_with_s(trans_es[0].strip())
+            ingredient_parser.unit = normalization_word_with_s(trans_es[1].strip())
 
     def normalization_quantity(ingredient_parser: IngredientIntegration):
         if ingredient_parser.quantity == "":
@@ -90,6 +86,8 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def normalization_unit(ingredient_par_: IngredientIntegration):
         if ingredient_par_.unit is not None:
+            if "cda" == ingredient_par_.unit.replace(".", ""):
+                ingredient_par_.unit = "Cucharada"
             for key, value in dictionary_unit.items():
                 if ingredient_par_.unit.lower() in value:
                     ingredient_par_.unit = key
@@ -101,8 +99,19 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def normalization_ingredient_name(ingredient_parser: IngredientIntegration):
         for ingredient_syno in ingredient_synonym:
-            if unidecode(ingredient_parser.name.lower()) in ingredient_syno.synonym:
-                ingredient_parser.name = ingredient_syno.name
+            for synonym in ingredient_syno.synonym:
+                if unidecode(ingredient_parser.name.lower()) == unidecode(synonym.lower()):
+                    ingredient_parser.name = ingredient_syno.name
+
+    def translate_steps(steps: [str]):
+        trans_es = Translate.translate_google(steps, 'es', 'en')
+        time.sleep(0.05)
+        return trans_es
+
+    def translate_name(name_recipe: str):
+        trans_es = Translate.translate_google_single(name_recipe, 'es', 'en')
+        time.sleep(0.05)
+        return trans_es
 
     total = len(recipes)
     for index, recipe in enumerate(recipes, start=1):
@@ -112,10 +121,15 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
             normalization_quantity(ingredient_par)
             normalization_ingredient_name(ingredient_par)
 
+        if language == 'en':
+            recipe.steps = translate_steps(recipe.steps)
+            recipe.name_recipe = translate_name(recipe.name_recipe)
+
         recipe.food_days = [normalization_food_day(category_meals_day) for category_meals_day in recipe.food_days]
         recipe.category_recipe = [category for category in recipe.category_recipe if category != ""]
         recipe.category_recipe = [normalization_food_category(category_recipe) for category_recipe in
                                   recipe.category_recipe]
+        recipe.category_recipe = list(set(recipe.category_recipe))
         normalization_difficulty(recipe)
 
         time.sleep(0.1)

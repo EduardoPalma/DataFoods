@@ -1,48 +1,37 @@
 nombre_ingrediente_nutrifoods,name_ingrediente_encontrado,unidades_falladas,urls
 Moras,mora,pinta,https://guidingstars.com/recipes/blackberry-lemon-salad/
-Champiñones portobello,Champiñones portobello,grande;,https://guidingstars.com/recipes/portobello-pizza/;https://guidingstars.com/recipes/portobello-stir-fry-salad/
-Cebolla morada,cebolla morada finamente picada,cucharada,https://guidingstars.com/recipes/strawberry-avocado-salsa/
-Ajo,frijole refrito bajo en sodio,lata;cda.;manojo,https://guidingstars.com/recipes/layered-taco-dip/;https://guidingstars.com/recipes/chicken-burgers-with-peanut-sauce/;https://guidingstars.com/recipes/mediterranean-eggplant-and-barley-salad/
+Tocino,tocino de pavo,tira,https://guidingstars.com/recipes/baked-chicken-meatballs/
 Lomo liso,liso,taza,https://guidingstars.com/recipes/sweet-potato-tapas/
 Trigo,wrap de trigo integral o lavash,,https://guidingstars.com/recipes/mediterranean-chicken-salad-pinwheels/
 Pimienta cayenna,Pimienta cayenna,guión,https://guidingstars.com/recipes/tempeh-bacon/
 Puré de zapallo,Puré de zapallo,lata,https://guidingstars.com/recipes/pumpkin-hummus/
 Arroz,envoltorio de papel de arroz,,https://guidingstars.com/recipes/rainbow-spring-rolls/
-Piñón,piñone,taza;cucharada,https://guidingstars.com/recipes/tomatoes-with-vegan-pesto/;https://guidingstars.com/recipes/pesto-sauce/
-Tortilla,tortilla integrale,;taza,https://guidingstars.com/recipes/roasted-squash-mozzarella-quesadillas/;https://guidingstars.com/recipes/chili-con-carne/
+Tortilla,"""tortilla integrale",;taza,https://guidingstars.com/recipes/peanut-butter-and-fruit-rolls/;https://guidingstars.com/recipes/chili-con-carne/
 Apio,sal de apio,cucharadita;grande,https://guidingstars.com/recipes/gluten-free-stuffed-mushrooms/;https://guidingstars.com/recipes/curried-squash-and-apple-bisque-with-leek/
-Sal,sal,,https://guidingstars.com/recipes/easy-banana-raisin-muffins/
+Berenjena,berenjena,pequeña,https://guidingstars.com/recipes/eggplant-parmesan-sandwich/
 Cebolla en polvo,cebolla en polvo o en hojuela,cda.,https://guidingstars.com/recipes/spinach-and-artichoke-dip/
-Palta,Palta,medio,https://guidingstars.com/recipes/avocado-pico-de-gallo/
+Manzana,sidra de manzana,cuarto,https://guidingstars.com/recipes/mulled-cider/
 Jengibre,jengibre fresco rallado,cda.,https://guidingstars.com/recipes/tropical-ginger-punch/
-Plátano,plátano,grande,https://guidingstars.com/recipes/summer-smoothie/
-Uvas,uva verde,taza,https://guidingstars.com/recipes/fall-fruit-salad/
-Clara de huevo,clara de huevo,grande,https://guidingstars.com/recipes/zucchini-walnut-loaf/
+Frambuesa,frambuesa,pinta,https://guidingstars.com/recipes/holiday-everyday-punch/
+Uvas,jugo de uva blanca,cucharada,https://guidingstars.com/recipes/fall-fruit-salad/
 Piña,trozo de piña,,https://guidingstars.com/recipes/fresh-fruit-kebabs-with-lemon-lime-dip/
-Naranja,naranja,grande,https://guidingstars.com/recipes/rhubarb-pear-nests/
 Cereal,paquete de tempeh multicereale,,https://guidingstars.com/recipes/spicy-asparagus-tempeh-stir-fry/
 Anís,maní sin sal,taza,https://guidingstars.com/recipes/turkey-vatapa/
-Cebolla,mezcla de pimiento y cebolla congelado,bolsa,https://guidingstars.com/recipes/weeknight-shakshuka/
-Salmón,filete de salmón,,https://guidingstars.com/recipes/sheet-pan-maple-salmon-bake/
-Champiñón,base de champiñone,cucharadita,https://guidingstars.com/recipes/mushroom-beef-burgers/
+Cebolla,pimiento y cebolla mixto congelado,bolsa;pequeña,https://guidingstars.com/recipes/weeknight-shakshuka/;https://guidingstars.com/recipes/vegan-mac-and-cheese/
+Carne,base de carne,cucharadita,https://guidingstars.com/recipes/mushroom-beef-burgers/
 Mango,chutney o salsa de mango,cucharada,https://guidingstars.com/recipes/grilled-mango-chicken/
-Zapallo italiano,Zapallo italiano,medio,https://guidingstars.com/recipes/zoodles-with-white-beans-and-garlic-oil/
+Palta,Palta,pequeño,https://guidingstars.com/recipes/green-goddess-sandwich/
 Aceite de oliva,cucharada de aceite de oliva,,https://guidingstars.com/recipes/sourdough-portobello-sandwich/
-Cerveza,cerveza mexicana,,https://guidingstars.com/recipes/pork-and-pumpkin-chili-with-greens/
-Lechuga,Lechuga romana,cogollada,https://guidingstars.com/recipes/asian-lettuce-wraps/
-Muslo de pollo,muslo de pollo sin piel,,https://guidingstars.com/recipes/slow-cooked-moroccan-chicken/
+Machas,ajo machacado,cucharada,https://guidingstars.com/recipes/spicy-lentil-wraps-with-red-pepper-paste-and-tahini-sauce/
+Pepino,pepino,pequeño,https://guidingstars.com/recipes/couscous-lentil-arugula-salad-with-garlic-dijon-vinaigrette/
 Caldo de verduras,caldo de verdura bajo en sodio,cuarto,https://guidingstars.com/recipes/french-lentils-with-chard/
 Aceituna negra,aceituna negra en rodaja,cda.,https://guidingstars.com/recipes/italian-baked-cod/
-Pimiento verde,pimiento verde,grande,https://guidingstars.com/recipes/campfire-stew/
-Castañas,castaña de agua en rodaja,lata;cucharada,https://guidingstars.com/recipes/orange-chicken-stir-fry/;https://guidingstars.com/recipes/stuffed-chicken-breasts/
-Berenjena,Berenjena italiana,pequeña,https://guidingstars.com/recipes/sicilian-caponata-with-whole-wheat-couscous/
+Pollo entero,Pollo entero,,https://guidingstars.com/recipes/lemon-garlic-roasted-chicken/
 Harina,tortilla de harina,,https://guidingstars.com/recipes/california-avocado-tacos/
-Almejas,almeja tierna entera,lata,https://guidingstars.com/recipes/spaghetti-with-clam-sauce/
-Pechuga de pollo,pechuga de pollo deshuesada y sin piel,grande,https://guidingstars.com/recipes/oven-fried-chicken-parmesan/
-Leche,taza de leche descremada,,https://guidingstars.com/recipes/sesame-crusted-tofu/
 Vino blanco,taza de vino blanco seco,,https://guidingstars.com/recipes/chicken-stufino/
-Albahaca,hoja de albahaca,grande;ramita,https://guidingstars.com/recipes/chickpea-tomato-salad/;https://guidingstars.com/recipes/spicy-tomato-and-lentil-soup/
-Habas,haba baby,bolsa,https://guidingstars.com/recipes/three-bean-salad/
-Arvejas,Arveja belga,,https://guidingstars.com/recipes/endive-and-escarole-salad-with-mustard-orange-vinaigrette/
+Cebolla morada,cebolla morada,pequeña,https://guidingstars.com/recipes/ginger-quinoa-salad/
+Papa,Papa,libra pequeña,https://guidingstars.com/recipes/country-potato-salad/
+Zapallo,Zapallo,pequeña,https://guidingstars.com/recipes/roasted-butternut-brains/
+Repollo,repollo verde,pequeño,https://guidingstars.com/recipes/ginger-cabbage-saute/
+Ajo,Ajo,pequeño,https://guidingstars.com/recipes/roasted-brussels-sprouts-shallots/
 Pimienta negra,"dukkah, avellanas, semilla de cilantro 3 cucharada de semilla de sésamo, semilla de comino 1 cucharada de grano de pimienta negra, semilla de hinojo, hoja seca de menta, taza de sal",cups,https://guidingstars.com/recipes/roasted-cauliflower-with-dukkah/
-Maíz,maíz,mazorca,https://guidingstars.com/recipes/grilled-corn-with-lime-butter/

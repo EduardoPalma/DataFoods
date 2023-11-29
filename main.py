@@ -1,9 +1,9 @@
-from consultation.QueriesRecipeIngredient import QueriesRecipeIngredient
-from integration import Transformations
+from consultation.queries_recipe_ingredient import QueriesRecipeIngredient
+from integration import transformations
 
 
 def init_pipeline(size_recipes, language="es"):
-    #hacer instancias de Elastic y NutrifoodDB
+    # hacer instancias de Elastic y NutrifoodDB
     queries = QueriesRecipeIngredient()
     ingredient_nutrifoods = queries.queries_ingredient_nutrifoods()
     ingredient_synonym = queries.queries_ingredient_synonym()
@@ -12,9 +12,9 @@ def init_pipeline(size_recipes, language="es"):
     else:
         recipes = queries.recipes_spanish(size_recipes)
 
-    recipes_ = Transformations.pipeline(recipes, ingredient_nutrifoods, ingredient_synonym, language, queries.client)
+    recipes_ = transformations.pipeline(recipes, ingredient_nutrifoods, ingredient_synonym, language, queries.client)
     print(len(recipes_))
 
 
 if __name__ == '__main__':
-    init_pipeline(1889, "en")
+    init_pipeline(100, "es")

@@ -1,10 +1,9 @@
 import time
-from consultation.ElasticSearch import Elastic
-from consultation.NutrifoodsDB import NutrifoodDB
-from consultation.Translate import Translate
+from consultation.elastic_search import Elastic
+from consultation.nutri_foods_db import NutrifoodDB
+from consultation.translate import Translate
 import datetime
-from logs import Records
-from logs.Records import Logs
+from logs.records import Logs
 import sys
 
 
@@ -14,7 +13,7 @@ class QueriesRecipeIngredient:
         self.client_nutrifoods = NutrifoodDB('nutrifoods_db', 'nutrifoods_dev', 'MVmYneLqe91$', 'localhost', '5432')
 
     def recipes_spanish(self, size_recipes):
-        recipes = self.client.get_recipe_batch(size_recipes, self.consult_logs(), "es")
+        recipes = self.client.get_recipe_batch(size_recipes, [], "es")
         total = len(recipes)
         for index, recipe in enumerate(recipes, start=1):
             try:
@@ -22,9 +21,9 @@ class QueriesRecipeIngredient:
                 log = Logs(recipe.id_image, 'consult', datetime.datetime.now())
                 self.client.insert_logs(log.tojson(), "logs-consult")
                 time.sleep(0.5)
-                porcentage_ = int((index / total) * 100)
+                percentage_ = int((index / total) * 100)
                 sys.stdout.write(
-                    "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), porcentage_))
+                    "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), percentage_))
                 sys.stdout.flush()
             except:
                 print("Error Traduccion 'GoogleTranslate'")
@@ -34,12 +33,8 @@ class QueriesRecipeIngredient:
         return recipes
 
     def recipes_english(self, size_recipes):
-        recipes = self.client.get_recipe_batch(size_recipes, self.consult_logs(), "en")
+        recipes = self.client.get_recipe_batch(size_recipes, [], "en")
         return recipes
-
-    def consult_logs(self):
-        logs = self.client.get_consult_logs("logs-consult")
-        return Records.get_logs(logs)
 
     def queries_ingredient_nutrifoods(self):
         ingredients = self.client_nutrifoods.get_ingredient_measure()

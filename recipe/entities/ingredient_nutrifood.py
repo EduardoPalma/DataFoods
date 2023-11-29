@@ -20,7 +20,7 @@ class IngredientIntegration:
 
 
 class IngredientSynonym:
-    def __init__(self, id, name):
+    def __init__(self, id, name, synonym):
         self.id = id
         self.name = name
-        self.synonym = []
+        self.synonym = synonym

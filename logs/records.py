@@ -1,7 +1,7 @@
 import csv
 import datetime
 
-from consultation.ElasticSearch import Elastic
+from consultation.elastic_search import Elastic
 
 
 class LogsIngredientFailsMeasure:

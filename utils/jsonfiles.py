@@ -1,6 +1,6 @@
 import json
 
-from recipe.dto.RecipeDto import RecipeDTO
+from recipe.dto.recipe_dto import RecipeDTO
 
 
 def to_json_recipes(recipes: [RecipeDTO]):

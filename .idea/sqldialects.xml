@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/analysis/consult.sql" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/consultation/NutrifoodsDB.py" dialect="PostgreSQL" />
-    <file url="file://$PROJECT_DIR$/consultation/QueriesRecipeIngredient.py" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/consultation/nutri_foods_db.py" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/consultation/queries_recipe_ingredient.py" dialect="PostgreSQL" />
   </component>
 </project>

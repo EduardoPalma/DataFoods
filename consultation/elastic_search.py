@@ -1,6 +1,6 @@
 from elasticsearch import Elasticsearch
 
-from recipe.entities.Recipe import Recipe
+from recipe.entities.recipe import Recipe
 
 
 class Elastic:
@@ -44,8 +44,3 @@ class Elastic:
         result = self.connect().index(index=_index, document=logs)
         if result['result'] != 'created':
             print("Insercion de registro fallada")
-
-    def get_consult_logs(self, _index):
-        resp = self.client.search(index=_index, size=5000)
-        return resp
-

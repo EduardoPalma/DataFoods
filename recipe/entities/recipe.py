@@ -1,4 +1,4 @@
-from recipe.entities.IngredientNutrifood import IngredientIntegration
+from recipe.entities.ingredient_nutrifood import IngredientIntegration
 
 
 def convert_ingredient(resp):

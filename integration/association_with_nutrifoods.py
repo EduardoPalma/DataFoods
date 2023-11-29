@@ -1,18 +1,18 @@
 import sys
 import time
-from consultation.ElasticSearch import Elastic
-from logs.Records import LogsIngredientFailsMeasure, LogsIngredientFails, save_logs_ingredient_fails, \
+from consultation.elastic_search import Elastic
+from logs.records import LogsIngredientFailsMeasure, LogsIngredientFails, save_logs_ingredient_fails, \
     save_logs_ingredient_measure_fails, add_logs_measure, add_logs_ingredient
-from recipe.dto.RecipeDto import RecipeDTO, QuantityDto, MeasuresDto
-from recipe.entities.IngredientNutrifood import IngredientNutri, IngredientIntegration
-from recipe.entities.Recipe import Recipe
+from recipe.dto.recipe_dto import RecipeDTO, QuantityDto, MeasuresDto
+from recipe.entities.ingredient_nutrifood import IngredientNutri, IngredientIntegration
+from recipe.entities.recipe import Recipe
 import spacy
 from unidecode import unidecode
-from utils.Utilsunit import quantity_frac, quantity_unit
-from utils.Nlputils import stemmer_porter
+from utils.utils_unit import quantity_frac, quantity_unit
+from utils.nlp_utils import stemmer_porter
 
 nlp = spacy.load("es_core_news_lg")
-punishable_ingredient = ["sal", "té", "ron"]
+punishable_ingredient = ["sal", "té", "ron", "ajo", "azúcar"]
 
 
 def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri],
@@ -76,26 +76,28 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                                quantity_ingredient) -> QuantityDto | MeasuresDto | None:
         if unit_ingredient is None or unit_ingredient == "":
             for unit in ingredient_nutrifood.measures:
-                if unit.name == 'unidad':
+                if unit.name.lower() == 'unidad':
                     fraction = quantity_frac(quantity_ingredient)
-                    return MeasuresDto(unit.id, fraction[0], fraction[1], fraction[2])
+                    return MeasuresDto(unit.name, ingredient_nutrifood.name, fraction[0], fraction[1], fraction[2])
             return None
 
         if unit_ingredient == "pizca" or unit_ingredient == "pellizco":
-            return QuantityDto(ingredient_nutrifood.id, 0)
+            return QuantityDto(ingredient_nutrifood.name, 0)
 
         if ("g" == unit_ingredient or "lb" in unit_ingredient or "ml" in unit_ingredient or
                 "oz" == unit_ingredient or "kg" in unit_ingredient):
             grams = quantity_unit(unit_ingredient, quantity_ingredient)
-            return QuantityDto(ingredient_nutrifood.id, grams)
+            return QuantityDto(ingredient_nutrifood.name, grams)
 
         unit = stemmer_porter(nlp(unit_ingredient.lower()))
         for unit_ingredient_nutrifood in ingredient_nutrifood.measures:
-            if (stemmer_porter(nlp(unit_ingredient_nutrifood.name.lower())) in unit or unit in stemmer_porter(
-                    nlp(unit_ingredient_nutrifood.name.lower())) or
-                    unit_ingredient_nutrifood.name.lower() in unit_ingredient.lower()):
+            if (stemmer_porter(
+                    nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) in unit or unit in stemmer_porter(
+                    nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) or
+                    unidecode(unit_ingredient_nutrifood.name.lower()) in unit_ingredient.lower()):
                 fraction = quantity_frac(quantity_ingredient)
-                return MeasuresDto(unit_ingredient_nutrifood.id, fraction[0], fraction[1], fraction[2])
+                return MeasuresDto(unit_ingredient_nutrifood.name, ingredient_nutrifood.name, fraction[0], fraction[1],
+                                   fraction[2])
         return None
 
     def match_unit_quantity(_ingredient, ingredient_nutri_, _recipe_dto):
@@ -113,7 +115,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                                  log_measures_ingredient_fails, recipe.url, _ingredient.name)
                 return False
         else:
-            _recipe_dto.quantities.append(QuantityDto(ingredient_nutri_.id, 0))
+            _recipe_dto.quantities.append(QuantityDto(ingredient_nutri_.name, 0))
             return True
 
     def nlp_association_ingredient(_ingredient_nutri: IngredientNutri, _ingredient: IngredientIntegration,
@@ -137,7 +139,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
     total = len(recipes)
     for index, recipe in enumerate(recipes, start=1):
         recipe_dto = RecipeDTO(recipe.name_recipe, recipe.author, recipe.url, recipe.portions, recipe.preparation_time,
-                               recipe.difficulty, recipe.food_days, recipe.category_recipe)
+                               recipe.difficulty, recipe.food_days, recipe.category_recipe, recipe.steps)
         for ingredient in recipe.ingredient_parser:
             text_normalized = unidecode(ingredient.name.lower().strip().replace(".", ""))
             ingredient_nutri: [IngredientNutri] = search_ingredient_nutrifoods(text_normalized)
