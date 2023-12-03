@@ -3,7 +3,7 @@ from consultation.elastic_search import Elastic
 from consultation.nutri_foods_db import NutrifoodDB
 from consultation.translate import Translate
 import datetime
-from logs.records import Logs
+from logs.records import Logs, get_logs_recipes
 import sys
 
 
@@ -13,14 +13,15 @@ class QueriesRecipeIngredient:
         self.client_nutrifoods = NutrifoodDB('nutrifoods_db', 'nutrifoods_dev', 'MVmYneLqe91$', 'localhost', '5432')
 
     def recipes_spanish(self, size_recipes):
-        recipes = self.client.get_recipe_batch(size_recipes, [], "es")
+        recipes = self.client.get_recipe_batch(size_recipes,
+                                               get_logs_recipes(self.client.get_logs_recipe("logs-recipe"), "es"), "es")
         total = len(recipes)
         for index, recipe in enumerate(recipes, start=1):
             try:
                 recipe.ingredients_translate = Translate.translate_google(recipe.ingredients, 'en')
                 log = Logs(recipe.id_image, 'consult', datetime.datetime.now())
                 self.client.insert_logs(log.tojson(), "logs-consult")
-                time.sleep(0.5)
+                time.sleep(0.7)
                 percentage_ = int((index / total) * 100)
                 sys.stdout.write(
                     "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), percentage_))
@@ -33,7 +34,8 @@ class QueriesRecipeIngredient:
         return recipes
 
     def recipes_english(self, size_recipes):
-        recipes = self.client.get_recipe_batch(size_recipes, [], "en")
+        recipes = self.client.get_recipe_batch(size_recipes,
+                                               get_logs_recipes(self.client.get_logs_recipe("logs-recipe"), "en"), "en")
         return recipes
 
     def queries_ingredient_nutrifoods(self):

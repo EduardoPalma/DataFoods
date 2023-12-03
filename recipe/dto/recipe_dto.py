@@ -13,6 +13,9 @@ class RecipeDTO:
         self.steps: list[str] = steps
 
     def to_json(self):
+        if self.preparationTime == 0:
+            self.preparationTime = None
+
         if self.difficulty == '' or self.difficulty is None:
             return {
                 "name": self.name,

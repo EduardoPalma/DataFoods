@@ -1,3 +1,5 @@
+import json
+
 from elasticsearch import Elasticsearch
 
 from recipe.entities.recipe import Recipe
@@ -24,11 +26,12 @@ class Elastic:
         return Recipe.get_recipes(resp)
 
     def get_recipe_batch(self, size_recipe, logs, category="es"):
+        print(len(logs))
         consult = {
             "query": {
                 "bool": {
                     "must_not": [
-                        {"terms": {"idImage": logs}}
+                        {"terms": {"name.keyword": logs}}
                     ]
                 }
             },
@@ -42,5 +45,14 @@ class Elastic:
 
     def insert_logs(self, logs, _index):
         result = self.connect().index(index=_index, document=logs)
+        if result['result'] != 'created':
+            print("Insercion de registro fallada")
+
+    def get_logs_recipe(self, index):
+        resp = self.client.search(index=index, size=5000)
+        return resp
+
+    def insert_logs_recipes(self, logs, _index):
+        result = self.client.index(index=_index, document=logs)
         if result['result'] != 'created':
             print("Insercion de registro fallada")

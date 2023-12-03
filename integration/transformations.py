@@ -19,14 +19,15 @@ def pipeline(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri]
                             not any(ingredient.name in punished for ingredient in recipe.ingredient_parser)]
         return filtered_recipes
 
-    load_recipes = APIloadNutrifood("", "")
+    # load_recipes = APIloadNutrifood("", "")
     print("---------- Fase de Integracion ---------")
     acquisition_ing_unit_quantity(recipes, language)
     recipes_ = cleaning(recipes)
     normalization(recipes_, ingredient_synonym, language)
     business_rules(recipes_)
-    recipes_association = association_with_nutrifoods_ingredient(recipes_, ingredient_nutrifoods, client_elastic)
-    #logs_metrics_data_quality(client_elastic, recipes_, recipes, recipes_association)
-    #to_json_recipes(recipes_association)
-    #load_recipes.send_data(recipes_association)
+    recipes_association = association_with_nutrifoods_ingredient(recipes_, ingredient_nutrifoods, language,
+                                                                 client_elastic)
+    # logs_metrics_data_quality(client_elastic, recipes_, recipes, recipes_association)
+    to_json_recipes(recipes_association)
+    # load_recipes.send_data(recipes_association)
     return recipes_

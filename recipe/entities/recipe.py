@@ -24,6 +24,7 @@ class Recipe:
         self.steps = resp['steps']
         self.ingredients_translate = []
         self.ingredient_parser: list[IngredientIntegration] = []
+        self.name_recipe_translate = None
 
     def print_ingredient(self):
         for ingredient in self.ingredients:

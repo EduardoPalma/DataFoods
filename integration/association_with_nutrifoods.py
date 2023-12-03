@@ -1,8 +1,9 @@
 import sys
 import time
+
 from consultation.elastic_search import Elastic
-from logs.records import LogsIngredientFailsMeasure, LogsIngredientFails, save_logs_ingredient_fails, \
-    save_logs_ingredient_measure_fails, add_logs_measure, add_logs_ingredient
+from logs.records import LogsIngredientFailsMeasure, LogsIngredientFails, add_logs_measure, add_logs_ingredient, \
+    save_logs_recipes
 from recipe.dto.recipe_dto import RecipeDTO, QuantityDto, MeasuresDto
 from recipe.entities.ingredient_nutrifood import IngredientNutri, IngredientIntegration
 from recipe.entities.recipe import Recipe
@@ -16,7 +17,7 @@ punishable_ingredient = ["sal", "té", "ron", "ajo", "azúcar"]
 
 
 def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri],
-                                           client_elastic: Elastic):
+                                           language: str, client_elastic: Elastic):
     def search_ingredient_nutrifoods(ingredient_: str) -> IngredientNutri | None:
         for ingredient_nutrifood in ingredient_nutrifoods:
             if unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')) == ingredient_:
@@ -93,7 +94,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
         for unit_ingredient_nutrifood in ingredient_nutrifood.measures:
             if (stemmer_porter(
                     nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) in unit or unit in stemmer_porter(
-                    nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) or
+                nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) or
                     unidecode(unit_ingredient_nutrifood.name.lower()) in unit_ingredient.lower()):
                 fraction = quantity_frac(quantity_ingredient)
                 return MeasuresDto(unit_ingredient_nutrifood.name, ingredient_nutrifood.name, fraction[0], fraction[1],
@@ -136,17 +137,27 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
     log_ingredient_fails: [LogsIngredientFails] = []
     recipe_correct = True
     recipes_associated_with_nutrifoods: [RecipeDTO] = []
+    logs_recipe_correct: [(str, str)] = []
     total = len(recipes)
     for index, recipe in enumerate(recipes, start=1):
+
         recipe_dto = RecipeDTO(recipe.name_recipe, recipe.author, recipe.url, recipe.portions, recipe.preparation_time,
-                               recipe.difficulty, recipe.food_days, recipe.category_recipe, recipe.steps)
+                               recipe.difficulty, recipe.food_days, recipe.category_recipe,
+                               recipe.steps) if language == "es" else RecipeDTO(recipe.name_recipe_translate,
+                                                                                recipe.author,
+                                                                                recipe.url, recipe.portions,
+                                                                                recipe.preparation_time,
+                                                                                recipe.difficulty, recipe.food_days,
+                                                                                recipe.category_recipe, recipe.steps)
         for ingredient in recipe.ingredient_parser:
             text_normalized = unidecode(ingredient.name.lower().strip().replace(".", ""))
             ingredient_nutri: [IngredientNutri] = search_ingredient_nutrifoods(text_normalized)
             recipe_correct = nlp_association_ingredient(ingredient_nutri, ingredient, recipe_dto)
             if recipe_correct is False:
                 break
+
         if recipe_correct:
+            logs_recipe_correct.append((recipe.id_image, recipe.name_recipe))
             recipes_associated_with_nutrifoods.append(recipe_dto)
 
         time.sleep(0.05)
@@ -155,8 +166,10 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
             "\rAsociando Ingredientes      : [%-40s] %d%%" % ('=' * (index * 40 // total),
                                                               percentage))
         sys.stdout.flush()
-    save_logs_ingredient_fails(log_ingredient_fails, client_elastic)
-    save_logs_ingredient_measure_fails(log_measures_ingredient_fails, client_elastic)
+
     sys.stdout.write("\n")
+    # save_logs_ingredient_fails(log_ingredient_fails, client_elastic)
+    # save_logs_ingredient_measure_fails(log_measures_ingredient_fails, client_elastic)
+    save_logs_recipes(logs_recipe_correct, language, client_elastic)
     print(len(recipes_associated_with_nutrifoods))
     return recipes_associated_with_nutrifoods

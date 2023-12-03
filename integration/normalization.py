@@ -25,7 +25,7 @@ dictionary_food_category = {
 dictionary_meals_day = {"Desayuno": ["desayuno"], "Almuerzo": ["almuerzo"], "Cena": ["cena"],
                         "Merienda": ["Snack", "snack"]}
 
-dictionary_difficulty = {"Fácil": ["facil", "fácil", "Facil"], "Medianada": ["media"], "Dificil": ["dificil"]}
+dictionary_difficulty = {"Fácil": ["facil", "fácil", "Facil"], "Medianada": ["media"], "Difícil": ["dificil"]}
 
 dictionary_unit = {"kg": ["kilogramo", "kilogramos"], "g": ["grs", "gramos", "gramo"], "oz": ["onza", "onzas"],
                    "lb": ["libra", "libras"]}
@@ -53,14 +53,39 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
         if ingredient_parser.unit is None or ingredient_parser.unit == '':
             trans_en = ingredient_parser.name.replace(".", "")
             trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
-            time.sleep(0.2)
+            time.sleep(0.8)
             ingredient_parser.name = normalization_word_with_s(trans_es)
         else:
             trans_en = [ingredient_parser.name.replace(".", ""), ingredient_parser.unit.replace(".", "")]
             trans_es = Translate.translate_google(trans_en, 'es', 'en')
-            time.sleep(0.2)
+            time.sleep(0.8)
             ingredient_parser.name = normalization_word_with_s(trans_es[0].strip())
             ingredient_parser.unit = normalization_word_with_s(trans_es[1].strip())
+
+    def normalization_translate_batch(_recipe: Recipe):
+        ingredients_to_translate = []
+        for ingredient_text in _recipe.ingredient_parser:
+            if ingredient_text.unit is None or ingredient_text.unit == '':
+                trans_text = ingredient_text.name.replace(".", "")
+                ingredients_to_translate.append(trans_text)
+            else:
+                trans_text = ingredient_text.name.replace(".", "") + "|" + ingredient_text.unit.replace(".", "")
+                ingredients_to_translate.append(trans_text)
+
+        try:
+            translate = Translate.translate_google(ingredients_to_translate, 'es', 'en')
+        except Exception as e:
+            print("error al traducir: ", e)
+            translate = Translate.translate_batch(ingredients_to_translate, 'en', 'es')
+
+        time.sleep(0.7)
+        for i, tran in enumerate(translate, start=0):
+            split_tran = tran.split("|")
+            if len(split_tran) == 1:
+                _recipe.ingredient_parser[i].name = normalization_word_with_s(tran.strip())
+            else:
+                _recipe.ingredient_parser[i].name = normalization_word_with_s(split_tran[0].strip())
+                _recipe.ingredient_parser[i].unit = normalization_word_with_s(split_tran[1].strip())
 
     def normalization_quantity(ingredient_parser: IngredientIntegration):
         if ingredient_parser.quantity == "":
@@ -86,7 +111,7 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def normalization_unit(ingredient_par_: IngredientIntegration):
         if ingredient_par_.unit is not None:
-            if "cda" == ingredient_par_.unit.replace(".", ""):
+            if "cda" in ingredient_par_.unit.replace(".", ""):
                 ingredient_par_.unit = "Cucharada"
             for key, value in dictionary_unit.items():
                 if ingredient_par_.unit.lower() in value:
@@ -105,34 +130,35 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def translate_steps(steps: [str]):
         trans_es = Translate.translate_google(steps, 'es', 'en')
-        time.sleep(0.05)
+        time.sleep(0.3)
         return trans_es
 
     def translate_name(name_recipe: str):
         trans_es = Translate.translate_google_single(name_recipe, 'es', 'en')
-        time.sleep(0.05)
+        time.sleep(0.3)
         return trans_es
 
     total = len(recipes)
     for index, recipe in enumerate(recipes, start=1):
+        normalization_translate_batch(recipe)
         for ingredient_par in recipe.ingredient_parser:
-            normalization_translate(ingredient_par)
+            # normalization_translate(ingredient_par)
             normalization_unit(ingredient_par)
             normalization_quantity(ingredient_par)
             normalization_ingredient_name(ingredient_par)
 
         if language == 'en':
             recipe.steps = translate_steps(recipe.steps)
-            recipe.name_recipe = translate_name(recipe.name_recipe)
+            recipe.name_recipe_translate = translate_name(recipe.name_recipe)
 
         recipe.food_days = [normalization_food_day(category_meals_day) for category_meals_day in recipe.food_days]
         recipe.category_recipe = [category for category in recipe.category_recipe if category != ""]
         recipe.category_recipe = [normalization_food_category(category_recipe) for category_recipe in
                                   recipe.category_recipe]
         recipe.category_recipe = list(set(recipe.category_recipe))
-        normalization_difficulty(recipe)
+        recipe.difficulty = normalization_difficulty(recipe)
 
-        time.sleep(0.1)
+        time.sleep(0.05)
         percentage = int((index / total) * 100)
         sys.stdout.write(
             "\rNormalizando Datos          : [%-40s] %d%%" % ('=' * (index * 40 // total),

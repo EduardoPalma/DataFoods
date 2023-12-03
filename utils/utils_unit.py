@@ -54,6 +54,6 @@ def quantity_unit(unit: str, quantity_ingredient: str) -> float:
     if unit == "g":
         return float(quantity_ingredient)
     elif unit == "ml":
-        return float(quantity_ingredient) * 1.85
+        return float(quantity_ingredient) * 0.85
     else:
         return convert_unit(unit, quantity_ingredient)

@@ -44,10 +44,11 @@ class LogsIngredientFails:
         }
 
 
-def get_logs(resp):
+def get_logs_recipes(resp, language: str):
     logs_id = []
     for hit in resp['hits']['hits']:
-        logs_id.append(hit['_source']['id'])
+        if hit['_source']["language"] == language:
+            logs_id.append(hit['_source']['nameRecipe'])
     return logs_id
 
 
@@ -100,6 +101,17 @@ def add_logs_ingredient(log_ingredient_fails_: [LogsIngredientFails], ingredient
     log_ingredient = LogsIngredientFails(ingredient_name, datetime.datetime.now())
     log_ingredient.add_url(url)
     log_ingredient_fails_.append(log_ingredient)
+
+
+def save_logs_recipes(ids: [(str, str)], language: str, client_elastic: Elastic):
+    with open("logs/id_image_recipe.csv", mode='w', newline='', encoding="utf-8") as archivo_csv:
+        head = ["id_image", "name_recipe"]
+        write_csv = csv.DictWriter(archivo_csv, fieldnames=head)
+        write_csv.writeheader()
+        for log in ids:
+            client_elastic.insert_logs_recipes({"nameRecipe": log[1], "idImage": log[0], "language": language}, "logs-recipe")
+            write_csv.writerow(
+                {"id_image": log[0], "name_recipe": log[1]})
 
 
 class Logs:
