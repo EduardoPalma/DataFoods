@@ -26,7 +26,6 @@ class Elastic:
         return Recipe.get_recipes(resp)
 
     def get_recipe_batch(self, size_recipe, logs, category="es"):
-        print(len(logs))
         consult = {
             "query": {
                 "bool": {

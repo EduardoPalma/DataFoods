@@ -14,7 +14,7 @@ dictionary_food_category = {
     "Pan": ["panes"],
     "Plato principal": ["comidas", "comida", "platos principales", "plato principal",
                         "guarniciones", "saludables"],
-    "Postre": ["postres", "postre"],
+    "Postre": ["postres", "postre", "postres y refrigerios"],
     "Reposteria": [""],
     "Salsa": ["salsas"],
     "Sándwich": ["sandwich"],
@@ -48,19 +48,6 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
             if category_.lower() in value:
                 return key
         return category_
-
-    def normalization_translate(ingredient_parser: IngredientIntegration):
-        if ingredient_parser.unit is None or ingredient_parser.unit == '':
-            trans_en = ingredient_parser.name.replace(".", "")
-            trans_es = Translate.translate_google_single(trans_en, 'es', 'en')
-            time.sleep(0.8)
-            ingredient_parser.name = normalization_word_with_s(trans_es)
-        else:
-            trans_en = [ingredient_parser.name.replace(".", ""), ingredient_parser.unit.replace(".", "")]
-            trans_es = Translate.translate_google(trans_en, 'es', 'en')
-            time.sleep(0.8)
-            ingredient_parser.name = normalization_word_with_s(trans_es[0].strip())
-            ingredient_parser.unit = normalization_word_with_s(trans_es[1].strip())
 
     def normalization_translate_batch(_recipe: Recipe):
         ingredients_to_translate = []

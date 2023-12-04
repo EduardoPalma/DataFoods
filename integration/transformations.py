@@ -27,7 +27,7 @@ def pipeline(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri]
     business_rules(recipes_)
     recipes_association = association_with_nutrifoods_ingredient(recipes_, ingredient_nutrifoods, language,
                                                                  client_elastic)
-    # logs_metrics_data_quality(client_elastic, recipes_, recipes, recipes_association)
+    logs_metrics_data_quality(client_elastic, recipes_, recipes, recipes_association, language)
     to_json_recipes(recipes_association)
     # load_recipes.send_data(recipes_association)
     return recipes_

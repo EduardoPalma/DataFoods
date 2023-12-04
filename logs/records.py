@@ -1,17 +1,17 @@
 import csv
 import datetime
-
 from consultation.elastic_search import Elastic
 
 
 class LogsIngredientFailsMeasure:
 
-    def __init__(self, name_ingredient, ingredient, date):
+    def __init__(self, name_ingredient, ingredient, date, language):
         self.name_ingredient = name_ingredient
         self.urls = []
         self.ingredient = ingredient
         self.name_measures = []
         self.date_time = date
+        self.language = language
 
     def add_measure_and_url(self, name_measure, url):
         self.name_measures.append(name_measure)
@@ -23,15 +23,17 @@ class LogsIngredientFailsMeasure:
             "urls": self.urls,
             "name_ingredient_detected": self.ingredient,
             "measures_fails": self.name_measures,
-            "date": self.date_time
+            "date": self.date_time,
+            "language": self.language
         }
 
 
 class LogsIngredientFails:
-    def __init__(self, name_ingredient, date):
+    def __init__(self, name_ingredient, date, language):
         self.name_ingredient = name_ingredient
         self.urls = []
         self.date = date
+        self.language = language
 
     def add_url(self, url):
         self.urls.append(url)
@@ -40,7 +42,8 @@ class LogsIngredientFails:
         return {
             "name_ingredient": self.name_ingredient,
             "urls": self.urls,
-            "date": self.date
+            "date": self.date,
+            "language": self.language
         }
 
 
@@ -78,7 +81,7 @@ def save_logs_ingredient_measure_fails(logs_ingredient_measure_fails: [LogsIngre
 
 def add_logs_measure(ingredient_nutri_, ingredient_unit,
                      log_measures_ingredient_fails_: [LogsIngredientFailsMeasure],
-                     url, ingredient_):
+                     url, ingredient_, language: str):
     for log_measure in log_measures_ingredient_fails_:
         if ingredient_nutri_ == log_measure.name_ingredient:
             if ingredient_unit not in log_measure.name_measures:
@@ -87,18 +90,18 @@ def add_logs_measure(ingredient_nutri_, ingredient_unit,
             else:
                 return
 
-    log_ingredient_fail = LogsIngredientFailsMeasure(ingredient_nutri_, ingredient_, datetime.datetime.now())
+    log_ingredient_fail = LogsIngredientFailsMeasure(ingredient_nutri_, ingredient_, datetime.datetime.now(), language)
     log_ingredient_fail.add_measure_and_url(ingredient_unit, url)
     log_measures_ingredient_fails_.append(log_ingredient_fail)
 
 
-def add_logs_ingredient(log_ingredient_fails_: [LogsIngredientFails], ingredient_name, url):
+def add_logs_ingredient(log_ingredient_fails_: [LogsIngredientFails], ingredient_name, url, language: str):
     for log_ingredient in log_ingredient_fails_:
         if log_ingredient.name_ingredient == ingredient_name:
             log_ingredient.add_url(url)
             return
 
-    log_ingredient = LogsIngredientFails(ingredient_name, datetime.datetime.now())
+    log_ingredient = LogsIngredientFails(ingredient_name, datetime.datetime.now(), language)
     log_ingredient.add_url(url)
     log_ingredient_fails_.append(log_ingredient)
 
@@ -109,16 +112,7 @@ def save_logs_recipes(ids: [(str, str)], language: str, client_elastic: Elastic)
         write_csv = csv.DictWriter(archivo_csv, fieldnames=head)
         write_csv.writeheader()
         for log in ids:
-            client_elastic.insert_logs_recipes({"nameRecipe": log[1], "idImage": log[0], "language": language}, "logs-recipe")
+            client_elastic.insert_logs_recipes({"nameRecipe": log[1], "idImage": log[0], "language": language},
+                                               "logs-recipe")
             write_csv.writerow(
                 {"id_image": log[0], "name_recipe": log[1]})
-
-
-class Logs:
-    def __init__(self, _id, _type, _date):
-        self.id = _id
-        self.type = _type
-        self.date = _date
-
-    def tojson(self):
-        return {"id": self.id, "type": self.type, "date": self.date}

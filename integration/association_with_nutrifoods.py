@@ -3,7 +3,7 @@ import time
 
 from consultation.elastic_search import Elastic
 from logs.records import LogsIngredientFailsMeasure, LogsIngredientFails, add_logs_measure, add_logs_ingredient, \
-    save_logs_recipes
+    save_logs_recipes, save_logs_ingredient_fails, save_logs_ingredient_measure_fails
 from recipe.dto.recipe_dto import RecipeDTO, QuantityDto, MeasuresDto
 from recipe.entities.ingredient_nutrifood import IngredientNutri, IngredientIntegration
 from recipe.entities.recipe import Recipe
@@ -113,7 +113,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                 return True
             else:
                 add_logs_measure(ingredient_nutri_.name, _ingredient.unit.lower(),
-                                 log_measures_ingredient_fails, recipe.url, _ingredient.name)
+                                 log_measures_ingredient_fails, recipe.url, _ingredient.name, language)
                 return False
         else:
             _recipe_dto.quantities.append(QuantityDto(ingredient_nutri_.name, 0))
@@ -126,7 +126,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
         if _ingredient_nutri is None:
             ingredient_nutri_ = search_ingredient_nutrifoods_contains(text_normalized)
             if ingredient_nutri_ is None:
-                add_logs_ingredient(log_ingredient_fails, _ingredient.name, recipe.url)
+                add_logs_ingredient(log_ingredient_fails, _ingredient.name, recipe.url, language)
                 return False
             else:
                 return match_unit_quantity(_ingredient, ingredient_nutri_, recipe_dto_)
@@ -168,8 +168,8 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
         sys.stdout.flush()
 
     sys.stdout.write("\n")
-    # save_logs_ingredient_fails(log_ingredient_fails, client_elastic)
-    # save_logs_ingredient_measure_fails(log_measures_ingredient_fails, client_elastic)
+    save_logs_ingredient_fails(log_ingredient_fails, client_elastic)
+    save_logs_ingredient_measure_fails(log_measures_ingredient_fails, client_elastic)
     save_logs_recipes(logs_recipe_correct, language, client_elastic)
     print(len(recipes_associated_with_nutrifoods))
     return recipes_associated_with_nutrifoods

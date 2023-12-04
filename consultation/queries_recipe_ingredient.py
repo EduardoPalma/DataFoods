@@ -2,8 +2,7 @@ import time
 from consultation.elastic_search import Elastic
 from consultation.nutri_foods_db import NutrifoodDB
 from consultation.translate import Translate
-import datetime
-from logs.records import Logs, get_logs_recipes
+from logs.records import get_logs_recipes
 import sys
 
 
@@ -19,8 +18,6 @@ class QueriesRecipeIngredient:
         for index, recipe in enumerate(recipes, start=1):
             try:
                 recipe.ingredients_translate = Translate.translate_google(recipe.ingredients, 'en')
-                log = Logs(recipe.id_image, 'consult', datetime.datetime.now())
-                self.client.insert_logs(log.tojson(), "logs-consult")
                 time.sleep(0.7)
                 percentage_ = int((index / total) * 100)
                 sys.stdout.write(
