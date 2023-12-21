@@ -56,7 +56,7 @@ def get_logs_recipes(resp, language: str):
 
 
 def save_logs_ingredient_fails(logs_ingredient_fails: [LogsIngredientFails], client_elastic: Elastic):
-    with open("analysis/fails_ingredient_es.csv", mode='w', newline='', encoding="utf-8") as archivo_csv:
+    with open("analysis/fails_ingredient.csv", mode='w', newline='', encoding="utf-8") as archivo_csv:
         head = ["nombre_ingredient", "urls"]
         write_csv = csv.DictWriter(archivo_csv, fieldnames=head)
         write_csv.writeheader()
@@ -68,7 +68,7 @@ def save_logs_ingredient_fails(logs_ingredient_fails: [LogsIngredientFails], cli
 
 def save_logs_ingredient_measure_fails(logs_ingredient_measure_fails: [LogsIngredientFailsMeasure],
                                        client_elastic: Elastic):
-    with open("analysis/fails_ingredient_measure.csv_es", mode='w', newline='', encoding="utf-8") as archivo_csv:
+    with open("analysis/fails_ingredient_measure.csv", mode='w', newline='', encoding="utf-8") as archivo_csv:
         head = ["nombre_ingrediente_nutrifoods", "name_ingrediente_encontrado", "unidades_falladas", "urls"]
         write_csv = csv.DictWriter(archivo_csv, fieldnames=head)
         write_csv.writeheader()

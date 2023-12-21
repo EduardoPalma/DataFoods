@@ -171,5 +171,4 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
     save_logs_ingredient_fails(log_ingredient_fails, client_elastic)
     save_logs_ingredient_measure_fails(log_measures_ingredient_fails, client_elastic)
     save_logs_recipes(logs_recipe_correct, language, client_elastic)
-    print(len(recipes_associated_with_nutrifoods))
     return recipes_associated_with_nutrifoods

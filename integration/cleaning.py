@@ -5,7 +5,7 @@ import sys
 
 def cleaning(recipes: list[Recipe]):
     def duplicate_attribute(recipe_duplicate: Recipe):
-        return recipe_duplicate.name_recipe
+        return recipe_duplicate.url
 
     def missing_ingredient(recipe_: Recipe):
         for ingredient_par in recipe_.ingredient_parser:

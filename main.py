@@ -1,5 +1,4 @@
 from consultation.queries_recipe_ingredient import QueriesRecipeIngredient
-from consultation.translate import Translate
 from integration import transformations
 
 

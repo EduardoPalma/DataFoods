@@ -1,7 +1,4 @@
-import json
-
 from elasticsearch import Elasticsearch
-
 from recipe.entities.recipe import Recipe
 
 
