@@ -12,4 +12,4 @@ async def insert_recipe(archivo_json):
 
 
 if __name__ == '__main__':
-    asyncio.run(insert_recipe("load/recetas.json"))
+    asyncio.run(insert_recipe("analysis/recetas.json"))

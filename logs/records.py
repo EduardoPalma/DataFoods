@@ -107,12 +107,24 @@ def add_logs_ingredient(log_ingredient_fails_: [LogsIngredientFails], ingredient
 
 
 def save_logs_recipes(ids: [(str, str)], language: str, client_elastic: Elastic):
-    with open("logs/id_image_recipe.csv", mode='w', newline='', encoding="utf-8") as archivo_csv:
-        head = ["id_image", "name_recipe"]
-        write_csv = csv.DictWriter(archivo_csv, fieldnames=head)
-        write_csv.writeheader()
+    try:
+        try:
+            with open("analysis/id_image_recipe.csv", mode='r', encoding="utf-8") as archivo_csv:
+                existing_data = list(csv.DictReader(archivo_csv))
+        except FileNotFoundError:
+            existing_data = []
+
+        new_data = [{"id_image": log[0], "name_recipe": log[1]} for log in ids]
+        csv_data = existing_data + new_data
+
+        with open("analysis/id_image_recipe.csv", mode='w', newline='', encoding="utf-8") as archivo_csv:
+            head = ["id_image", "name_recipe"]
+            write_csv = csv.DictWriter(archivo_csv, fieldnames=head)
+            write_csv.writeheader()
+            write_csv.writerows(csv_data)
+
         for log in ids:
             client_elastic.insert_logs_recipes({"nameRecipe": log[1], "idImage": log[0], "language": language},
                                                "logs-recipe")
-            write_csv.writerow(
-                {"id_image": log[0], "name_recipe": log[1]})
+    except Exception as e:
+        print(f"Error al agregar datos al archivo CSV: {str(e)}")

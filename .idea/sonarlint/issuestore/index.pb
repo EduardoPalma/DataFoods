@@ -16,8 +16,6 @@ I
 Å
 Q.idea/sonarlint/securityhotspotstore/4/9/496a238a6afa168dbaf6efd37bb459331589579c,b\0\b0bb0a26d88d16d2e82502fe47e034e248a527a2
 w
-G.idea/sonarlint/issuestore/9/5/9591ecd28c5c712f6e2010b4b5d70a060930ffbf,8\d\8d7a78462767dae4a08d51ebde5a6c8cae8b6cdc
-w
 G.idea/sonarlint/issuestore/2/f/2ff695df8548c325ab29628deaf61fe760b45ea6,e\8\e8300c5537052da950a285b2088d73b297671b92
 Å
 Q.idea/sonarlint/securityhotspotstore/2/f/2ff695df8548c325ab29628deaf61fe760b45ea6,5\7\5745c8937255f8d0820c1f7149b3be4fbd512a57
@@ -25,8 +23,6 @@ w
 G.idea/sonarlint/issuestore/4/9/496a238a6afa168dbaf6efd37bb459331589579c,6\e\6e9644ddf83ab52f39902ecdbfdf4118285ac40c
 Å
 Q.idea/sonarlint/securityhotspotstore/1/e/1e9075f5bf079c01ef2c910709e91a497d262080,2\b\2b8cdd31beed7f49883db0988fe57e4618cd62fd
-Å
-Q.idea/sonarlint/securityhotspotstore/9/5/9591ecd28c5c712f6e2010b4b5d70a060930ffbf,1\f\1fb1ae3d657925d16be9dc595926fdce45e9a467
 w
 G.idea/sonarlint/issuestore/1/e/1e9075f5bf079c01ef2c910709e91a497d262080,2\5\2511a7590eb091d560dac1615e6bcef0ceeaffb6
 Å
@@ -69,10 +65,6 @@ G
 integration/Cleaning.py,a\7\a7bf321846b7c8d18d0dadaf5e52c6cc71cd0221
 L
 integration/Normalization.py,9\6\969eda0fd363ad062e62cc8a3c9b2d1852718cd5
-P
- analysis/fails_ingredient_es.csv,2\f\2fb10d7193d980ec4c3cc30dfb2dbc94a0455ac6
-X
-(analysis/fails_ingredient_measure.csv_es,6\8\6821ee9a75b6fbaf0636360948604e8ba27f2194
 B
 utils/jsonfiles.py,b\0\b0939168adecacdc4f90dba4ded6d510cc9bad1d
 A
@@ -117,9 +109,11 @@ U
 %analysis/fails_ingredient_measure.csv,5\1\5198fb01d6472a79577137a633928b7ba475fc29
 M
 analysis/fails_ingredient.csv,a\d\ad9126c8f5bc821e264ea558b8c6eb4aac876b30
-B
-analysis/query.sql,8\e\8efd51046007cc52293dca3fc2fb091d1435124d
 @
 insert_recipe.py,f\a\fa489413b6ef767b23ac64e7c4c06dd4d50e7122
 I
 integration/validation.py,1\1\11fd6a3b75989a5f659fdac9787531ccba4d3891
+L
+analysis/id_image_recipe.csv,8\7\87c2287cc7ca3b8b90e49a18a34477de42ad9984
+E
+analysis/recetas.json,9\7\97a0cd86873ff80fc4d7c8cec4cf508aeed350c8
