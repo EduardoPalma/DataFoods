@@ -3,7 +3,7 @@ import time
 import sys
 
 
-def cleaning(recipes: list[Recipe]):
+def cleaning(recipes: list[Recipe], urls_nutrifoods: list[str]):
     def duplicate_attribute(recipe_duplicate: Recipe):
         return recipe_duplicate.url
 
@@ -12,6 +12,11 @@ def cleaning(recipes: list[Recipe]):
             if ingredient_par.name is None:
                 return False
         return True
+
+    def exist_recipe(recipe_: Recipe):
+        if recipe_.url not in urls_nutrifoods:
+            return True
+        return False
 
     def missing_data(recipe_missing: Recipe):
         if recipe_missing.portions == 0:
@@ -30,7 +35,7 @@ def cleaning(recipes: list[Recipe]):
     recipes_aux: list[Recipe] = []
     total = len(recipes)
     for index, recipe in enumerate(recipes, start=1):
-        if duplicate_attribute(recipe) not in recipes_uniq and missing_data(recipe):
+        if duplicate_attribute(recipe) not in recipes_uniq and missing_data(recipe) and exist_recipe(recipe):
             recipes_uniq.add(duplicate_attribute(recipe))
             recipes_aux.append(recipe)
 

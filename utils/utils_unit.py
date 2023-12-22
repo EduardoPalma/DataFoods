@@ -2,7 +2,7 @@ from fractions import Fraction
 
 
 def convert_unit(category_unit: str, quantity: str) -> float:
-    if category_unit == "lb":
+    if "lb" in category_unit:
         if '/' in quantity and ' ' not in quantity:
             return float(Fraction(quantity)) * 453.592
         elif '/' in quantity and ' ' in quantity:
@@ -10,7 +10,7 @@ def convert_unit(category_unit: str, quantity: str) -> float:
             numerator_denominator = quantity.split(" ")[1]
             return (float(integer_part) + (float(Fraction(numerator_denominator)))) * 453.592
         else:
-            return float(Fraction(quantity)) * 453.592
+            return float(quantity) * 453.592
     elif category_unit == "oz":
         if '/' in quantity and ' ' not in quantity:
             return float(Fraction(quantity)) * 28.3495

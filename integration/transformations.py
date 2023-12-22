@@ -13,7 +13,8 @@ punished = ["nutella", "nesquik", "nestle", "gourmet", "masa de hoja", "masa par
 
 
 def pipeline(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri],
-             ingredient_synonym: list[IngredientSynonym], language: str, client_elastic: Elastic):
+             ingredient_synonym: list[IngredientSynonym], language: str, client_elastic: Elastic,
+             urls_nutrifoods: list[str]):
     def business_rules(recipes_normalization: list[Recipe]):
         filtered_recipes = [recipe for recipe in recipes_normalization if
                             not any(ingredient.name in punished for ingredient in recipe.ingredient_parser)]
@@ -22,12 +23,11 @@ def pipeline(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri]
     load_recipes = APIloadNutrifood("https://localhost:7212/", "api/v1/recipes/multiple")
     print("---------- Fase de Integracion ---------")
     acquisition_ing_unit_quantity(recipes, language)
-    recipes_ = cleaning(recipes)
+    recipes_ = cleaning(recipes, urls_nutrifoods)
     normalization(recipes_, ingredient_synonym, language)
     business_rules(recipes_)
     recipes_association = association_with_nutrifoods_ingredient(recipes_, ingredient_nutrifoods, language,
                                                                  client_elastic)
-
     load_recipes.send_data(recipes_association)
     logs_metrics_data_quality(client_elastic, recipes_, recipes, recipes_association, language)
     to_json_recipes(recipes_association)

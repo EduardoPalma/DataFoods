@@ -1,5 +1,4 @@
 import psycopg2
-from unidecode import unidecode
 from recipe.entities.ingredient_nutrifood import IngredientNutri, Measure, IngredientSynonym
 
 
@@ -66,3 +65,9 @@ class NutrifoodDB:
         cl.execute("select i.id,i.name,i.synonyms from ingredient as i")
         result = cl.fetchall()
         return convert_object_ingredient_sy(result)
+
+    def get_name_recipe_nutrifoods(self):
+        cl = self.client.cursor()
+        cl.execute("select r.url from recipe as r where r.author = 'DietDoctor';")
+        result = [url[0] for url in cl.fetchall()]
+        return result

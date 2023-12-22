@@ -42,3 +42,6 @@ class QueriesRecipeIngredient:
     def queries_ingredient_synonym(self):
         ingredient_synonym = self.client_nutrifoods.get_ingredient_synonyms()
         return ingredient_synonym
+
+    def queries_recipe_url(self):
+        return self.client_nutrifoods.get_name_recipe_nutrifoods()

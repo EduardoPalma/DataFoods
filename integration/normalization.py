@@ -30,6 +30,8 @@ dictionary_difficulty = {"Fácil": ["facil", "fácil", "Facil"], "Mediana": ["me
 dictionary_unit = {"kg": ["kilogramo", "kilogramos"], "g": ["grs", "gramos", "gramo"], "oz": ["onza", "onzas"],
                    "lb": ["libra", "libras"]}
 
+pattern = re.compile(r'Paso \d+: ')
+
 
 def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSynonym], language: str):
     def normalization_word_with_s(word: str):
@@ -104,7 +106,7 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def normalization_unit(ingredient_par_: IngredientIntegration):
         if ingredient_par_.unit is not None:
-            if "cda." in ingredient_par_.unit.replace(".", ""):
+            if "cda" in ingredient_par_.unit:
                 ingredient_par_.unit = "Cucharada"
             for key, value in dictionary_unit.items():
                 if ingredient_par_.unit.lower() in value:
@@ -150,6 +152,7 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
         recipe.category_recipe = list(set(recipe.category_recipe))
         remove_dish_types(recipe)
         recipe.difficulty = normalization_difficulty(recipe)
+        recipe.steps = [pattern.sub('', step) for step in recipe.steps]
 
         time.sleep(0.05)
         percentage = int((index / total) * 100)
