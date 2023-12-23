@@ -20,13 +20,13 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                                            language: str, client_elastic: Elastic):
     def search_ingredient_nutrifoods(ingredient_: str) -> IngredientNutri | None:
         for ingredient_nutrifood in ingredient_nutrifoods:
-            if unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')) == ingredient_:
+            if unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')) == ingredient_.lower():
                 return ingredient_nutrifood
         return None
 
     def search_for_ingredient_contained_within_text(ingredient_, ingredient_nutrifoods_clean):
         for ingredient_nutrifood in ingredient_nutrifoods_clean:
-            if unidecode(ingredient_nutrifood.name.lower().strip().rstrip("s")) in ingredient_:
+            if unidecode(ingredient_nutrifood.name.lower().strip().rstrip("s")) in ingredient_.lower():
                 return ingredient_nutrifood
         return None
 
@@ -35,7 +35,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                                                       _ingredient_nutrifoods_clean):
             if value == 1:
                 for ingredient_nutrifood in ingredient_nutrifoods:
-                    if ingredient_ in unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')):
+                    if ingredient_.lower() in unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')):
                         ingredient_similarity_nutrifood = nlp(unidecode(ingredient_nutrifood.name.lower().strip()))
                         if ingredient_similarity_nutrifood.has_vector and _ingredient_similarity.has_vector:
                             similarity = _ingredient_similarity.similarity(ingredient_similarity_nutrifood)
@@ -43,7 +43,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
             else:
                 _coincidences.clear()
                 for ingredient_nutrifood in _ingredient_nutrifoods_clean:
-                    if unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')) in ingredient_:
+                    if unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')) in ingredient_.lower():
                         ingredient_similarity_nutrifood = nlp(unidecode(ingredient_nutrifood.name.lower().strip()))
                         if ingredient_similarity_nutrifood.has_vector and _ingredient_similarity.has_vector:
                             similarity = ingredient_similarity_nutrifood.similarity(_ingredient_similarity)
@@ -54,7 +54,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                                        ingredient_aux.name.lower() not in punishable_ingredient]
         if ingredient_ == "":
             return None
-        ingredient_similarity = nlp(ingredient_)
+        ingredient_similarity = nlp(ingredient_.lower())
         similarity_contains_ingredient_nutrifoods(1, ingredient_similarity, coincidences, ingredient_nutrifoods_clean)
 
         if coincidences:
@@ -121,12 +121,12 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
 
     def nlp_association_ingredient(_ingredient_nutri: IngredientNutri, _ingredient: IngredientIntegration,
                                    recipe_dto_: RecipeDTO):
-        if _ingredient.name == "agua":
+        if "agua" in _ingredient.name.lower():
             return True
         if _ingredient_nutri is None:
             ingredient_nutri_ = search_ingredient_nutrifoods_contains(text_normalized)
             if ingredient_nutri_ is None:
-                add_logs_ingredient(log_ingredient_fails, _ingredient.name, recipe.url, language)
+                add_logs_ingredient(log_ingredient_fails, _ingredient.name.lower(), recipe.url, language)
                 return False
             else:
                 return match_unit_quantity(_ingredient, ingredient_nutri_, recipe_dto_)

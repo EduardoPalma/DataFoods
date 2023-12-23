@@ -20,7 +20,7 @@ def pipeline(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri]
                             not any(ingredient.name in punished for ingredient in recipe.ingredient_parser)]
         return filtered_recipes
 
-    load_recipes = APIloadNutrifood("https://localhost:7212/", "api/v1/recipes/multiple")
+    load_recipes = APIloadNutrifood("https://localhost:7212/", "api/v1/recipes/batch-insert")
     print("---------- Fase de Integracion ---------")
     acquisition_ing_unit_quantity(recipes, language)
     recipes_ = cleaning(recipes, urls_nutrifoods)

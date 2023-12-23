@@ -108,6 +108,8 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
         if ingredient_par_.unit is not None:
             if "cda" in ingredient_par_.unit:
                 ingredient_par_.unit = "Cucharada"
+            if "tbsps" in ingredient_par_.unit:
+                ingredient_par_.unit = "Cucharada"
             for key, value in dictionary_unit.items():
                 if ingredient_par_.unit.lower() in value:
                     ingredient_par_.unit = key
@@ -120,7 +122,7 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
     def normalization_ingredient_name(ingredient_parser: IngredientIntegration):
         for ingredient_syno in ingredient_synonym:
             for synonym in ingredient_syno.synonym:
-                if unidecode(ingredient_parser.name.lower()) == unidecode(synonym.lower()):
+                if unidecode(ingredient_parser.name.lower()) == unidecode(synonym.lower().rstrip('s')):
                     ingredient_parser.name = ingredient_syno.name
 
     def translate_steps(steps: [str]):

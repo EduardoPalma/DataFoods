@@ -25,18 +25,12 @@ G.idea/sonarlint/issuestore/4/9/496a238a6afa168dbaf6efd37bb459331589579c,6\e\6e
 Q.idea/sonarlint/securityhotspotstore/1/e/1e9075f5bf079c01ef2c910709e91a497d262080,2\b\2b8cdd31beed7f49883db0988fe57e4618cd62fd
 w
 G.idea/sonarlint/issuestore/1/e/1e9075f5bf079c01ef2c910709e91a497d262080,2\5\2511a7590eb091d560dac1615e6bcef0ceeaffb6
-Å
-Q.idea/sonarlint/securityhotspotstore/1/f/1fb1ae3d657925d16be9dc595926fdce45e9a467,2\a\2acb3d7ad57b17c65fe3cfe320360acf3fbc271b
 I
 recipe/entities/Recipe.py,0\8\08cfd06b4c3a9925a50454251d8df416c026265e
-w
-G.idea/sonarlint/issuestore/8/d/8d7a78462767dae4a08d51ebde5a6c8cae8b6cdc,4\1\410be0a0a896988a4d58fbc46e28b1847ab025de
 Å
 Q.idea/sonarlint/securityhotspotstore/2/5/2511a7590eb091d560dac1615e6bcef0ceeaffb6,3\b\3b7e3833ab2df03289a69fde1cd59d339cd30c94
 Å
 Q.idea/sonarlint/securityhotspotstore/2/b/2b8cdd31beed7f49883db0988fe57e4618cd62fd,6\9\6998cab4d9943c6ac02ac13c35a814eaa2deec7f
-w
-G.idea/sonarlint/issuestore/1/f/1fb1ae3d657925d16be9dc595926fdce45e9a467,b\0\b02a8e0f66229c75626586c79d1e80c591531009
 Å
 Q.idea/sonarlint/securityhotspotstore/6/e/6e9644ddf83ab52f39902ecdbfdf4118285ac40c,0\5\054f31728749641a72a23a9b0650b2219ef48374
 Å
@@ -53,8 +47,6 @@ w
 G.idea/sonarlint/issuestore/e/8/e8300c5537052da950a285b2088d73b297671b92,8\4\84dcd9fa7e39578b94d579cfb595f2848f47f6b2
 w
 G.idea/sonarlint/issuestore/6/e/6e9644ddf83ab52f39902ecdbfdf4118285ac40c,4\2\4291a6ab95c696f29dcedea66516b99a0fd0f28a
-Å
-Q.idea/sonarlint/securityhotspotstore/8/d/8d7a78462767dae4a08d51ebde5a6c8cae8b6cdc,0\a\0a6fa00765bf652932e8b048539560ba1b20d982
 w
 G.idea/sonarlint/issuestore/2/5/2511a7590eb091d560dac1615e6bcef0ceeaffb6,1\8\18214068b58c1008534ca39a211bf932cd4ed0b3
 w
@@ -67,8 +59,6 @@ L
 integration/Normalization.py,9\6\969eda0fd363ad062e62cc8a3c9b2d1852718cd5
 B
 utils/jsonfiles.py,b\0\b0939168adecacdc4f90dba4ded6d510cc9bad1d
-A
-load/recetas.json,e\2\e2e8e963b477dcfee8b8f4f5afca75763967e1a6
 N
 consultation/elastic_search.py,9\0\9090061c44e52985d5c916aa5d51aa493f882a40
 N
@@ -103,8 +93,6 @@ C
 utils/utils_unit.py,a\8\a8721ac130beaa43f8f7ae965660895e49ab3d76
 B
 utils/nlp_utils.py,1\1\11a9d40a3f8b435b77cbfb6d0f1c7e125c55c2d1
-H
-logs/id_image_recipe.csv,5\8\58372486706b5fbe3eed8e50be9821b2c3144348
 U
 %analysis/fails_ingredient_measure.csv,5\1\5198fb01d6472a79577137a633928b7ba475fc29
 M
@@ -117,3 +105,13 @@ L
 analysis/id_image_recipe.csv,8\7\87c2287cc7ca3b8b90e49a18a34477de42ad9984
 E
 analysis/recetas.json,9\7\97a0cd86873ff80fc4d7c8cec4cf508aeed350c8
+P
+ analysis/new_synoninyms/synonyms,e\c\ec0a396ba1f0a4bf1bf000bb75f7552a0fe9b17f
+T
+$analysis/new_synoninyms/synonyms.csv,e\c\ecbe71d2872bba208207c7d235c848e55d5cb8f1
+\
+,analysis/new_synoninyms/units_ingredient.csv,3\0\3041023260982eff2d215990b52ab29df765bf9c
+Z
+*analysis/new_synonyms/units_ingredient.csv,f\e\fe7bc76073a1682a7596deea7ffabe294d6a0596
+R
+"analysis/new_synonyms/synonyms.csv,5\2\5220af295158836ee79f3e707c8fd4e5532e24af
