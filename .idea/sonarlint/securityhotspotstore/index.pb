@@ -105,13 +105,9 @@ L
 analysis/id_image_recipe.csv,8\7\87c2287cc7ca3b8b90e49a18a34477de42ad9984
 E
 analysis/recetas.json,9\7\97a0cd86873ff80fc4d7c8cec4cf508aeed350c8
-P
- analysis/new_synoninyms/synonyms,e\c\ec0a396ba1f0a4bf1bf000bb75f7552a0fe9b17f
-T
-$analysis/new_synoninyms/synonyms.csv,e\c\ecbe71d2872bba208207c7d235c848e55d5cb8f1
-\
-,analysis/new_synoninyms/units_ingredient.csv,3\0\3041023260982eff2d215990b52ab29df765bf9c
 Z
 *analysis/new_synonyms/units_ingredient.csv,f\e\fe7bc76073a1682a7596deea7ffabe294d6a0596
 R
 "analysis/new_synonyms/synonyms.csv,5\2\5220af295158836ee79f3e707c8fd4e5532e24af
+T
+$analysis/new_synonyms/ingredient.csv,7\c\7cdbfee3be9e5295b0cf7c1827b01747777fda45
