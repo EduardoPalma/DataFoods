@@ -18,7 +18,7 @@ class QueriesRecipeIngredient:
         for index, recipe in enumerate(recipes, start=1):
             try:
                 recipe.ingredients_translate = Translate.translate_google(recipe.ingredients, 'en')
-                time.sleep(0.7)
+                time.sleep(0.8)
                 percentage_ = int((index / total) * 100)
                 sys.stdout.write(
                     "\rTraduciendo recetas [ES-EN] : [%-40s] %d%%" % ('=' * (index * 40 // total), percentage_))

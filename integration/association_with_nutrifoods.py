@@ -19,6 +19,7 @@ punishable_ingredient = ["sal", "té", "ron", "ajo", "azúcar"]
 def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nutrifoods: list[IngredientNutri],
                                            language: str, client_elastic: Elastic):
     def search_ingredient_nutrifoods(ingredient_: str) -> IngredientNutri | None:
+
         for ingredient_nutrifood in ingredient_nutrifoods:
             if unidecode(ingredient_nutrifood.name.lower().strip().rstrip('s')) == ingredient_.lower():
                 return ingredient_nutrifood
@@ -90,15 +91,16 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
             grams = quantity_unit(unit_ingredient, quantity_ingredient)
             return QuantityDto(ingredient_nutrifood.name, grams)
 
-        unit = stemmer_porter(nlp(unit_ingredient.lower()))
-        for unit_ingredient_nutrifood in ingredient_nutrifood.measures:
-            if (stemmer_porter(
-                    nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) in unit or unit in stemmer_porter(
-                nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) or
-                    unidecode(unit_ingredient_nutrifood.name.lower()) in unit_ingredient.lower()):
-                fraction = quantity_frac(quantity_ingredient)
-                return MeasuresDto(unit_ingredient_nutrifood.name, ingredient_nutrifood.name, fraction[0], fraction[1],
-                                   fraction[2])
+        unit = stemmer_porter(nlp(unidecode(unit_ingredient.lower())))
+        if ingredient_nutrifood.measures:
+            for unit_ingredient_nutrifood in ingredient_nutrifood.measures:
+                if (stemmer_porter(
+                        nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) in unit or unit in stemmer_porter(
+                    nlp(unidecode(unit_ingredient_nutrifood.name.lower()))) or
+                        unidecode(unit_ingredient_nutrifood.name.lower()) in unit_ingredient.lower()):
+                    fraction = quantity_frac(quantity_ingredient)
+                    return MeasuresDto(unit_ingredient_nutrifood.name, ingredient_nutrifood.name, fraction[0], fraction[1],
+                                       fraction[2])
         return None
 
     def match_unit_quantity(_ingredient, ingredient_nutri_, _recipe_dto):
@@ -157,7 +159,7 @@ def association_with_nutrifoods_ingredient(recipes: list[Recipe], ingredient_nut
                 break
 
         if recipe_correct:
-            logs_recipe_correct.append((recipe.id_image, recipe.name_recipe))
+            logs_recipe_correct.append((recipe.id_image, recipe_dto.name))
             recipes_associated_with_nutrifoods.append(recipe_dto)
 
         time.sleep(0.05)

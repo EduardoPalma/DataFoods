@@ -28,7 +28,7 @@ dictionary_meals_day = {"Desayuno": ["desayuno"], "Almuerzo": ["almuerzo"], "Cen
 dictionary_difficulty = {"Fácil": ["facil", "fácil", "Facil"], "Mediana": ["media"], "Difícil": ["dificil"]}
 
 dictionary_unit = {"kg": ["kilogramo", "kilogramos"], "g": ["grs", "gramos", "gramo"], "oz": ["onza", "onzas"],
-                   "lb": ["libra", "libras"]}
+                   "lb": ["libra", "libras"], "cucharada": ["cda", "cdas", "tbsps","tbsp"], 'cucharadita': ["tsps"]}
 
 pattern = re.compile(r'Paso \d+: ')
 
@@ -73,14 +73,14 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
             print("error al traducir: ", e)
             translate = Translate.translate_batch(ingredients_to_translate, 'en', 'es')
 
-        time.sleep(0.7)
+        time.sleep(0.8)
         for i, tran in enumerate(translate, start=0):
             split_tran = tran.split("|")
             if len(split_tran) == 1:
-                _recipe.ingredient_parser[i].name = normalization_word_with_s(tran.strip())
+                _recipe.ingredient_parser[i].name = normalization_word_with_s(tran.strip().replace(".", ""))
             else:
                 _recipe.ingredient_parser[i].name = normalization_word_with_s(split_tran[0].strip())
-                _recipe.ingredient_parser[i].unit = normalization_word_with_s(split_tran[1].strip())
+                _recipe.ingredient_parser[i].unit = normalization_word_with_s(split_tran[1].strip().replace(".", ""))
 
     def normalization_quantity(ingredient_parser: IngredientIntegration):
         if ingredient_parser.quantity == "":
@@ -127,7 +127,7 @@ def normalization(recipes: list[Recipe], ingredient_synonym: list[IngredientSyno
 
     def translate_steps(steps: [str]):
         trans_es = Translate.translate_google(steps, 'es', 'en')
-        time.sleep(0.5)
+        time.sleep(0.8)
         return trans_es
 
     def translate_name(name_recipe: str):

@@ -111,3 +111,5 @@ R
 "analysis/new_synonyms/synonyms.csv,5\2\5220af295158836ee79f3e707c8fd4e5532e24af
 T
 $analysis/new_synonyms/ingredient.csv,7\c\7cdbfee3be9e5295b0cf7c1827b01747777fda45
+O
+analysis/new_synonyms/sqery.sql,3\0\300c1ce3c18bb3317936ac6b46b33e1bdd0046ab

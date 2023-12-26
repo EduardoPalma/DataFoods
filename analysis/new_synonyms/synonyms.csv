@@ -3,8 +3,8 @@ Arvejas,Guisante congelado;Guisante sin cáscara;Guisante enlatado
 Limon,Lima
 Nueces,Avellana;Avellana cruda o tostada;Avellana molida
 Arándano,Baya congelada;Fruto rojo congelado;Baya;baya fresca variada
-Porotos,Frijole rojo;Frijole;frijole blanco seco;guisante de ojo negro;frijole blanco;frijole sin sal añadida;frijole blanco sin sal añadida;guisante de carita seco;frijole blanco bajo en sodio
-Sal,Sal y pimienta;Al y pimienta;Sal gruesa o marina;Sal o pimienta;Sal y pimienta;Pimienta entera y molida;Sal rosada;sal gruesa;sal kosher
+Porotos,Frijole rojo;Frijole;frijole blanco seco;guisante de ojo negro;frijole blanco;frijole sin sal añadida;frijole blanco sin sal añadida;guisante de carita seco;frijole blanco bajo en sodio;frijole pinto
+Sal,Sal y pimienta;Al y pimienta;Sal gruesa o marina;Sal o pimienta;Sal y pimienta;Pimienta entera y molida;Sal rosada;sal gruesa;sal kosher;alabama
 Ají,Pimentón picante;pimiento picante
 Aceite de oliva,AOVE;Ceite;Olivo
 Semillas de chía,Semilla varia;Varia semilla chia;Semilla de chía
@@ -30,7 +30,7 @@ Frutilla,fresa congelada;fresa fresca;fresa roja
 Choros,mejillone;mejillone ahumado
 Puré de zapallo,puré de calabaza sin azúcar
 Pollo entero,Pollo a la parrilla;Pollo deshuesado
-Caldo de ave,cubo de caldo de pollo
+Caldo de ave,cubo de caldo de pollo;caldo de pollo bajo en sodio
 Caldo de carne,caldo de res;cubito de caldo de res
 Ralladura de limón,hoja de lima
 Salsa de ají,pasta de chile;salsa picante
@@ -42,16 +42,16 @@ Azúcar,azúcar granulada;azúcar blanca
 Azúcar flor,azúcar gla
 Queso parmesano,parmesano rallado
 Papa,ñame;patata amarilla baby
-Poroto negro,frijole negro;frijole negro bajo en sodio
+Porotos negros,frijole negro;frijole negro bajo en sodio
 Pasta espiral,rotini;pasta en espiral
-Yogurt griego,yogur natural bajo en grasa;yogur natural sin grasa;yogur griego natural bajo en grasa;yogur griego natural sin grasa;yogur griego natural;Yogur griego natural
+Yogurt griego,yogur natural bajo en grasa;yogur natural sin grasa;yogur griego natural bajo en grasa;yogur griego natural sin grasa;yogur griego natural;Yogur griego natural;yogur griego entero
 Té,té preparado
 Azúcar rubia,azúcar moreno claro;azúcar moreno oscuro
 tofu,tofu sedoso;tofu suave;tofu firme
 Zapallo,calabaza enlatada
 Merkén,pimentón ahumado
-Fettuccine,fettucina;espagueti integrale;espagueti fino;fetuccine
+Fettuccine,fettucina;espagueti integrale;espagueti fino;fetuccine;espagueti
 Pasta penne,penne integral
-Láminas de lasaña;fideo de lasaña integral
+Láminas de lasaña,fideo de lasaña integral
 Betarraga,remolacha sin sal añadida;raíce de remolacha
 Champiñones shiitake,hongo shitake;hongo shitake seco;hongo shiitake

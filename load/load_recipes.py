@@ -45,7 +45,8 @@ class APIloadNutrifood:
 
     def send_data(self, recipes: [RecipeDTO]) -> tuple[bool, list[tuple[str, str]]]:
         url = f"{self.base_url}{self.endpoint}"
-        json_data = [recipe.to_json() for recipe in recipes]
+        recipes_ = [recipe for recipe in recipes if recipe.name_recipe != "Ensalada keto de atún con alcaparras"]
+        json_data = [recipe.to_json() for recipe in recipes_]
         response_error: [(str, str)] = []
         total = len(json_data)
         for i in range(0, total, 20):
@@ -92,8 +93,9 @@ class APIloadNutrifood:
                 response = await response_insert_recipe(url, data_to_send)
                 time.sleep(0.5)
                 if response.status != 200:
-                    print(f"Error en la solicitud. Código de estado: {response.status}")
-                    print(response.text)
+                    print(f"\nError en la solicitud. Código de estado: {response.status}")
+                    text = await response.text(encoding="utf-8")
+                    print(text)
 
             except Exception as e:
                 print(f"Error al realizar la solicitud: {str(e)}")

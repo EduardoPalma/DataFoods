@@ -18,4 +18,4 @@ def init_pipeline(size_recipes, language="es"):
 
 if __name__ == '__main__':
     # Recetas en = 1894,  es = 1774
-    init_pipeline(1774, "es")
+    init_pipeline(1894, "en")
