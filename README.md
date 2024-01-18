@@ -1,11 +1,10 @@
-
-"El proyecto se enfocó en la obtención de datos de recetas de comida provenientes de diversas fuentes, especialmente de páginas web centradas en recetas con un enfoque nutricional, incluyendo recetas típicas chilenas y de diferentes tipos.
+Proyecto enfocado en la automatizacion de obtención e ingreso de datos de recetas de comida provenientes de diversas fuentes, especialmente de páginas web centradas en recetas de comida con un enfoque nutricional, incluyendo recetas típicas chilenas y de diferentes tipos. 
 
 Se implementó un proceso ETL (Extracción, Transformación y Carga) que comenzó con un web scraping en cuatro fuentes principales: Dietdoctor, Comidas Típicas Chilenas, Nutrium y Guiding Stars. 
 El repositorio del web scraping está disponible en https://github.com/EduardoPalma/WebScrappingRecipes.
 
 Para la construcción del sistema, se aplicó el patrón de diseño "Pipes and Filters", donde cada filtro representa una transformación en el proceso ETL. 
-El proyecto se destacó por la utilización de un modelo de machine learning llamado CRF (Conditional Random Field), comúnmente empleado en problemas de etiquetado NER o POS en el procesamiento del lenguaje natural. 
+El proyecto se destacó por la utilización de un modelo de machine learning llamado CRF (Conditional Random Field), comúnmente empleado en problemas de etiquetado NER o POST en el procesamiento del lenguaje natural. 
 En este caso, el CRF se empleó para la detección de ingredientes, unidades de medida y las cantidades asociadas. 
 
 Por ejemplo, el modelo CRF se utilizó específicamente para reconocer unidades de medida, ingredientes y cantidades en el texto contenidos en los ingredientes de las recetas.
